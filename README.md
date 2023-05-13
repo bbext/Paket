@@ -1,1 +1,1 @@
-Minimal package manager for BBCB2
+Minimal package manager for Black Box Component Builder
