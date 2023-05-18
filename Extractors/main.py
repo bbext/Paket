@@ -3,6 +3,44 @@ import lxml
 import csv  
 from html.parser import HTMLParser
 
+import requests
+import uuid 
+
+Skip = -2
+Start = -1
+Name = 0
+Author = 1
+FullName = 2
+Description = 3
+Depends = 4
+StdLink = 5
+
+def publish_package(package):
+    print("publishing: " + package[Name])
+    params = {
+        "component":(None, package[Name]),
+        "short":(None, package[FullName]),
+        "details":(None, package[Description]),
+        "authors":(None, package[Author]),
+        "link":(None, package[StdLink]),
+        "addNote":(None, "Add"),
+        "depends":(None, package[Depends])
+        
+    }
+    cookies = {'user': '421281', "code":"47a050201d6c32b3426481b1687e4901", "PHPSESSID":"j9d5qgo2o96c1u6ue8nran0ube", "language":"en"}
+    headers = {
+        'user-agent': 'my-app/0.0.1',
+        "Referer": "https://blackbox.oberon.org/settings/hodzanassredin" 
+        }
+    response = requests.post('https://blackbox.oberon.org/?pz=goods&f=add&profile=hodzanassredin&uid=12035', files=params,cookies= cookies,headers=headers)
+
+    if response.status_code == 200:
+        print("published")
+    else:
+        print("fail")
+        with open("error.html", "w") as f:
+            f.write(response.text)
+
 URLS = [
     "http://www.zinnamturm.eu/downloadsAC.htm",
     "http://www.zinnamturm.eu/downloadsDH.htm",
@@ -30,14 +68,7 @@ URLS = [
 
 
 
-Skip = -2
-Start = -1
-Name = 0
-Author = 1
-FullName = 2
-Description = 3
-Depends = 4
-StdLink = 5
+
 
 packages = []
 
@@ -54,7 +85,7 @@ class MyHTMLParser(HTMLParser):
             self.state = Name
         if tag == "a":
             for (name, val) in attrs:
-                if name == "href" and val.startswith("pac/") and val.endswith(".pac"):
+                if name == "href" and val.startswith("pac/") and val.endswith(".txt"):
                     self.package[StdLink] = val
                     self.state = Skip
         if tag == "h3" and self.state == Author:
@@ -87,7 +118,7 @@ for package in packages:
     package[Description] = package[Description].strip()
 
     if package[Description][-len(package[Name]):]==package[Name]:
-        package[Description] = package[Description][:-len(package[Name])]
+        package[Description] = package[Description][:-len(package[Name])].replace('\n',"\r\n")
     package[Depends] = package[Depends] \
             .replace("doesn't use any other CPC services.","")\
             .replace("uses the services of","")\
@@ -111,3 +142,13 @@ with open('zinnamturm.csv', 'w', encoding='utf-8') as f:
     write = csv.writer(f)
     write.writerow(fields)
     write.writerows(packages)
+
+existing = ["Paket","Ogl","Grid","Hyper","Xmlcore","Tabs","CpcAllCaps","Svg","Vi","Master","Flash","Lists","Strings","Scl","CPfront","Комплексные числа","Sdl2","Zlib","Odf","RedBox","Cairo",
+"Tetris","Collections","Russian","Tm","CpcTabs","Robust","Dia"]
+existing = [e.lower() for e in existing]
+
+for p in packages:
+    if not p[Name].lower() in existing:
+        publish_package(p)
+                
+                
