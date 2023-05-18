@@ -1,0 +1,1430 @@
+Name,Author,FullName,Description,Depends,StdLink
+Abpe,Dmitry V. Dagaev,Automata-Based Programming Engine.,"ABPE is a pilot implementation of automata-based programming engine. AbpeObx examples demonstrate the following files:
+
+
+'Data' files provide only type information for Records, derived from A.Data type, and a set of numbers for States and Outputs code procedures;
+'Code' files provide only code procedures for 'Data' files;
+'Schema' files provide 'Data' records connected in schemes. The schemes can be implemented in 'Schema' program modules (AddModule), Data instance pointers, (AddPtr) and schemes text files (AddFile).
+
+
+The Abpe engine performs AbpeExamples execution. AbpeRunner implements Services-based runtime.
+
+The 'Data' file consists of 2 sets of numbers defined in the type names, the 'HelloStates_0_1' RECORD (A.OnlyStates) prescribes the 'Code' file to have two state-connected routines for Hello type:
+PROCEDURE sss0* (VAR t: D.Hello; IN e: A.Event; VAR y: A.State);
+PROCEDURE sss1* (VAR t: D.Hello; IN e: A.Event; VAR y: A.State);
+
+The 'HelloOutputs_1_2' RECORD (A.OnlyOutputs) prescribes the 'Code' file to have two output-generating routines for Hello type:
+PROCEDURE zzz1* (VAR t: D.Hello; y: A.State);
+PROCEDURE zzz2* (VAR t: D.Hello; y: A.State);
+
+",,http://www.zinnamturm.eu/pac/Abpe.pac
+ADen,Fyodor Tkachov,Algorithms and Data Structures.,"The subsystem contains the program examples from N.Wirth's ""Algorithms and Data Structures. Oberon version"". This version incorporates corrections and modifications introduced in the Russian translation and approved by Niklaus Wirth in April, 2009. The book can be download from website http://www.inr.ac.ru/~info21/ADen/.
+
+To read the sources and run the programs, you need the BlackBox Component Builder (an Oberon derivative) freely available from http://www.oberon.ch/blackbox.html. BlackBox runs under MS Windows and Linux+Wine. All modules must be open and run from the BlackBox Component Builder.
+
+After installing BlackBox, unpack this package into the BlackBox folder (so that ADen and i21sys subfolders appear along with Com, Comm, Ctl ... BlackBox.exe ...). The modules require one external module to run called i21sys/Mod/In.odc . It is included in this package.
+
+Run BlackBox.exe, open the file ADen/Docu/Quick-Start.odc and read the instructions. The document ADen/Docu/Sys-Map.odc contains hyperlinks to all program examples. To run program examples in a module, click on the so-called commanders (the buttons like this one (!)); they are usually located after the end of the module text. Make sure nothing is selected when you click. The commanders should be clicked in the order of their appearance.
+
+",,http://www.zinnamturm.eu/pac/ADen.pac
+Alacarte,Helmut Zinn,3D computer graphic á la carte.,"Space...the Final Frontier. These are the voyages to the 3-D computer graphic. Your mission is to explore the strange 3D graphic world and to gain experience. To seek out:
+
+
+Viewing (Viewing Pipeline and hierarchical Modelling)
+Clipping
+Shading (gouraud and flat)
+Lighting (Ambient Light, Directed Light or Infinite Light, Point Light or Positional Light and Spot Light)
+Mash
+
+
+",Ctls TboxTimer,http://www.zinnamturm.eu/pac/Alacarte.pac
+Algebra,Robert D. Campbell,Computational Algebra library.,"Algebra is a 'Computational' algebra system, and can numerically evaluate elements from many mathematical structures. It is not a 'Computer Algebra System' that can handle these elements symbolically.
+
+The modules fall into four classes:
+
+
+AbstractExamples include Groups, Rings, & Fields as general ideas.
+Semi-abstractVectors, Matrices, Rationals, Polynomials, & Rational functions.
+The elements of these can be anything from the Abstract class.
+(Since a polynomial is a ring, one can have polynomials of polynomials, etc.)
+ConcreteSpecific examples of the abstract ideas.
+Examples are 3-D Vectors, Gaussian Integers, Multi-precision complex numbers,Quaternions, and many others.
+SpecialisedExamples are polynomial factorisation, orthogonal polynomials, type transfers.
+PolyRoot can, for example, factorise complex polynomials to arbitrary precision.
+
+
+AlgebraDemo gives an extensive demonstration of using the Algebra facilities.
+
+",Ctls CpcChill Lib,http://www.zinnamturm.eu/pac/Algebra.pac
+AlmGather,Aubrey McIntosh,Source Code Collection and Topological Sort (Gather.Order).,"Gather is a program that reads a list of 1 or more module names. It produces a topologically sorted list of all the modules that have source online and are necessary to support the listed modules. It has been in use for more than 10 years in the Oberon V4 environment, and was recently ported to BlackBox. Gather is written in Component Pascal. This version is for use with Oberon Microsystems BlackBox Component Builder v1.5 (BB) or v1.6-rc5.
+
+What it does:
+
+
+Reads the names of modules provided in the command parameters
+Scan the IMPORT lists of the modules
+Enter newly discovered imports to the list
+Topologically sort the list to correct compile / load order
+Open a document with the list
+
+
+What it does not do:
+
+
+Scan sym files
+Scan code files
+
+
+Gather is complimentary to DevDependencies. It was inspired by the Builder tool in ETH Oberon, but is written from scratch with different internal structure.
+
+",,http://www.zinnamturm.eu/pac/AlmGather.pac
+AlmPathLab,Aubrey McIntosh,A BusyBox (Lab) Panel to interconvert Module names and ancillary file names.,"This version works with the Linux BBCB version, Denisov et al.
+
+What it does:
+
+
+What it does: 
+Splits the provided module name into component parts.
+Presets some string values for different typeDirs, e.g., Mod, Docu, Sym, Code.
+Allows Strings filename support.
+Builds a locPath, filename, type, and complete pathname from the parts.
+Opens a document matching the name.
+This strings file for a (new) language.
+Pastes the full path to the focus cursor position.
+
+
+AlmPathLib, the module that AlmPathLab wraps, is redundant to Files.dir.GetFileName and StdLibrarian.  It does, however, support regularity in the generation of file names.
+
+",,http://www.zinnamturm.eu/pac/AlmPathLab.pac
+Amisc,Anton Dmitriev,"Organize Desktop, Taskbar and Toolbar.","Amisc organized your desktop like the original Oberon systems. It divides the desktop into two tracks: the user track and the system track. Furthermore it adds a taskbar at the bottom of the BlackBox windows. The taskbar has a button for every opened (document) window. Clicking on the button brings up the window to the top. At the top of the BlackBox windows it provides a toolbar. You can manipulate the current selection's attributes with that toolbar.
+
+",,http://www.zinnamturm.eu/pac/Amisc.pac
+Babel,Gérard Meunier,Babel Compiler Compiler.,"Babel is a meta compiler. From a language definition document, it builds the tables of a compiler (lexical, syntactic and semantic) and store them in a binary file. A special module, included in the final program, reads this file and then can compile texts of the language.
+
+You find examples of using Babel here:
+
+
+CpcIndex - Cross reference builder and pretty printer.
+CpcRegul - Regular Lexical Analyser.
+CpcStats - Statistic of accessing the CPC website.
+CpcWhere - Where, Indexer of Source & Symbol files.
+Hermes - Data Acquisition & Scientific Spreadsheet
+Kine - Simulation Tools.
+Plot - 2D plotting tools including data fit.
+Prolog - Prolog Language Interpreter
+Tp2cp - Convert Turbo Pascal to Component Pascal.
+UtilFunc - Inline Functions
+UtilMathsl - Mathematical Editor
+UtilJson - Encoding and decoding of JSON
+UtilGraphQL - GraphQL compiler and support
+
+
+",,http://www.zinnamturm.eu/pac/Babel.pac
+Basic,Helmut Zinn,Getting started with Component Pascal.,"Here are elementary programs for beginners to learn Component Pascal (Oberon 2). This small and easy modules are written in German. If someone would like to translate them to English please contact me.
+
+Einführung in Component Pascal.
+
+Hier sind kurze und einfache Programme für Anfänger zum Lernen von Component Pascal (Oberon-2). Es sind Aufgaben und Lösungen die in einen Anfängerkurs verwendet werden.
+
+",Ctls Xy,http://www.zinnamturm.eu/pac/Basic.pac
+Basics,Rainer Neubauer,"Program library for Bit-Manipulations, Dynamic-Strings, File-I/Os, Time Strings and Run-Parameters.","BasicsAssert The services of the module BasicsAssert are applied to implement design-by-contract. In case of trap the StdLog window will show name and value of the variable causing the trap and the appropriate limits.
+
+BasicsBits offers low level access to bits and bytes using the concept of SETs and avoiding the import of SYSTEM.
+
+BasicsDynStrings provides a class for dynamic strings. It includes useful procedures for string manipulations without limitations of the string lenght. Converters between basic data types and dynamic strings are available too.
+
+BasicsStrings offers the functionality of module Strings plus some additional services for dealing with Hex-Strings. In contrast to module Strings all output strings are delivered as POINTER TO ARRAY OF CHAR.
+
+BasicsFiles deals with ASCII files and binary files as well. It sits on top of module Files and offers traditional file I/O.
+
+BasicsParameters implements a scanner for analyzing parameters usually passed to programs via a command line. The parameter string ist passed to the module by calling ScanParameterString. Subsequently names and values of the parameters will be available by calling the according procedures.
+
+BasicsTime implements procedures for getting date / time strings, time stamps and pausing program execution by busy waiting.
+
+BasicsUtils offers some helpful utilities.
+
+",,http://www.zinnamturm.eu/pac/Basics.pac
+Bbt,Ivan N. Goryachev,BlackBox tools: Unicode module converter tools & Compiler helper tools.,"You can convert modules from code page to Unicode with the Unicode module converter tools. This tool is very useful for the migration from BlackBox 1.5 Russian version to BlackBox 1.7 CPC edition.
+
+With a new subsystem you may have the following questions: ""Which modules must I compile?"" and ""Which other subsystems I need for using this new subsystem?"" Now you get the answer very easily. You can create compile list and import list with the compiler helper tools. Looking thru the import list you can checking your system of consistency and found missing or misspelling modules even the source is not available.
+
+",,http://www.zinnamturm.eu/pac/Bbt.pac
+Benchmark,Helmut Zinn,A Benchmark Suite to Measure Computer Performance.,"Benchmarks provide a method of comparing the performance of various computer systems. All my old benchmark programs doesn't run on a computer today. So I downloaded some sources from internet and changed them to my need accordently. You find here in this subsystem some well-known benchmark programs: Counter, Sieve, Dhrystone, Whetstone, Livermore Loops and Hennessy.
+
+",,http://www.zinnamturm.eu/pac/Benchmark.pac
+Bnf7,Carl Glassberg,(Bnf7)Ebnf.atg: Ebnf Pretty-Printer. A sample use of Coco.,"This example grammar is similar to the Ebnf3.atg file provided with BB Coco. The main difference between Ebnf3.atg and this grammar is the addition of semantics to create a translator and pretty-printer.
+
+An unattributed ATG grammar supplied as input to Coco will create a syntax-analyzer, assuming no errors have occurred. The output of Coco will be a scanner, parser and a main driver that will need to be compiled by BlackBox.
+
+Such a syntax analyzer only accepts or rejects the input that the ATG grammar itself defines. The main driver will output (to the StdLog) the message ""Parsed correctly"" if there are no syntax errors in the input the ATG grammar expects. Otherwise the number of detected errors is output to the StdLog.
+
+The input for sample runs are an EBNF definition for EBNF itself and an EBNF definition for Oberon. Errors are marked in the input focus view. All the previously discussed syntax-checking actions still occur. In addition, a pretty-printed version of the input grammar is output to a separate window.
+
+",,http://www.zinnamturm.eu/pac/Bnf7.pac
+C2cp,Helmut Zinn,C to Component Pascal Translator.,"This software converts C source program to Component Pascal (Oberon-2). All identifier collected into one symbol table. The symbol table is used for name translation. The original translator was written a very long time ago in Turbo Pascal. It has no syntax analysis. The translator recognize patterns only. If it doesn't find a matching pattern the output is equal the input.
+
+",,http://www.zinnamturm.eu/pac/C2cp.pac
+Cam,Mathieu Westerweele,"Multiple Undo/Redo, light up / hot buttons, list readers and procedure navigator.","Subsystem Cam comprises of a few handy ""low-level"" modules, which I use extensively. Most of them where build before I discovered the CPC website. The modules consist of:
+
+
+
+CamTools: A wrapper around the Sequencers of BlackBox, which makes it possible to implement multiple undo/redo actions. E.g.: undoing/redoing a set of actions in stead of one at a time.
+
+
+CamLightupButtons: Picture buttons that light up when you move your mouse over the button
+
+
+CamLists: The module CamLists defines the data types List and ListReader. Any storable object (extension of Stores.Store) can be added to a list. All manipulations to a list (adding and removing objects) which alter the contents of the list are implemented as operations. This means that all manipulation actions are undoable and redoable.
+
+
+CamToolBars: Toolbars with ""hot"" buttons, that light up when the mouse moves over them.
+
+
+CamProcScan: A simple program to quickly get an overview of all implemented procedures in a module and a tool to quickly jump to the one you want to go to. This module also contains a procedure to make all keywords bold and to make all comments blue and italic.
+
+
+
+",,http://www.zinnamturm.eu/pac/Cam.pac
+Casket,Robert D. Campbell,Writing mathematical expressions in BlackBox documents.,"Casket provides a flexible Bitmap type (e.g. Views as *.png) and various utilities (e.g. RTF Import/Export to Word) that use it:
+
+CasketRtfConv provides RTF (Rich Text Format) import and export by file or cut-&-paste. It has more accurate paragraph formatting than HostTextConv, and significantly it supports Links, Tables, and Pictures as Bitmaps.
+
+CasketLatex creates high quality typeset bitmaps of mathematical expressions described using plain Ascii. It provides the facilities of LaTeX inside BlackBox '.odc' documents. You can easily write odc documents containing sophisticated mathematics.
+
+LaTeX is used by many major software systems and authors - for example all mathematics in Wikipedia is typeset with LaTeX.
+
+CasketKeeper uses FreeImage to convieniently support writing arbitrary BlackBox Views to file in a variety of formats (*.bmp, *.gif, *.jpg, *.png, & *.tiff).
+
+CasketBitmaps provides interfaces to other BlackBox Bitmap types and facilities (HostBitmaps, CpcBitmaps, FreeImage, Windows Bitmaps). It supports writing compressed BlackBox Bitmap Views (using Pac, or another Compressor), interfacing to FreeImage, and is designed to support other applications.
+
+CasketReferences is not required by CasketLatex, but could compliment it by providing equation numbering in a large document. It may also have uses unconnected with CasketLatex.
+
+",Ctls Lib Pac,http://www.zinnamturm.eu/pac/Casket.pac
+ChillDocu,Robert D. Campbell,Chill 12 Documentation.,"The Chill group is a collection of subsystems and individual modules published by Robert Campbell. The current version control number of these is called Chill 12, and 'Chill' is sometimes used as a generic name for these subsystems. Chill 12 is compatible with BlackBox 1.7.x.
+
+This ChillDocu is a set of 'overview' (e.g. 'Map's etc) documentation files that is recommended should you choose to install several, or all, of these subsystems. It provides convenient access to several subsystems and Tools from the Help Menu. It also gives guidance on installing all Chill subsystems, as there are some dependencies between them.
+
+The following subsystems are member of the Chill group:
+
+
+Algebra - Computational Algebra library.
+Casket - Writing mathematical expressions in BlackBox documents.
+CpcChill - Bitmaps, ControlTips, FormTidy, Markers, Search and Stylists.
+Ctls - Buttons, Arrows, Sets, Sliders, RealField and UnitField.
+Demo - Sample programs of using the Chill group.
+Filter - Digital and other filter design and analysis.
+Frame - An abstract hierarchical Specification framework.
+Lib - Engineering & Scientific library.
+Multi - Arbitrary ultra high precision arithmetic & Tools.
+Nav - Navigation & Coordinate transform library modules and tools.
+OglChill - An extension to the 'Base' or 'Original' Ogl subsystem adding higher level functionality.
+Wands - A collection of general purpose and eclectic tools (Wand: tool used by a magician).
+
+
+A full Chill installation makes use of the following non-Chill modules & subsystems available from CPC:
+
+
+CpcBookmarks - Bookmarks for text documents.
+CpcCompressors - Data compression utility interface.
+CpcMenus - Switching Menus.
+CpcSpell - A minimalistic Spelling checker.
+Escher - Escher constraint-drawing editor.
+FreeImage - Loading, displaying and saving popular graphic image formats.
+Ogl - An interface to OpenGL.
+Pac - Data compression utility (Burrows / Wheeler or LZ77 + adaptative Huffman coding).
+StdBackgrounder - Set Background Colour in Views (Modified from the original Oms version).
+Xmlcore - Using Document Object Model and Extensible Markup Language.
+
+
+Grateful thanks to the authors of the above for publishing their work for the benefit of other users.
+
+The ChillDocu save set installs its files into //BlackBox/Docu/ChillDocu/. Open there the file Chill-Map.odc to getting started.
+
+StdCoded File <=>",,http://www.zinnamturm.eu/pac/ChillDocu.pac
+Co_,Dmitry V. Dagaev,"Coroutines, Tasks and Schedulers.","Co_Routines module is suitable for suspending and resuming execution on certain locations. A list of tasks can be built upon: cooperative multitasking, state machines, infinite lists, pipes, etc. Task represent the simplest form for periodic execution. Scheduler is for runtime control of both.
+
+",,http://www.zinnamturm.eu/pac/Co_.pac
+Coco,Helmut Zinn,A BlackBox port of Hanspeter Mössenböck's Coco/R Compiler Compiler.,"Coco/R is a language for generating compilers from attributed EBNF grammars. You find more information about this topic at Prof. Pat Terry's Coco/R page. The original port of Coco is from the Stewart Greenhill's website BlackBox Resources. I adapt Coco to the BlackBox subsystem and use BlackBox IO directly.
+
+You find examples of using Coco here:
+
+
+Bnf7 - (Bnf7)Ebnf.atg: Ebnf Pretty-Printer. A sample use of Coco.
+Prettify - 3 Coco pretty-printer (PP) grammars for Component Pascal.
+Webstat - Analysing Web Log Files.
+
+
+",,http://www.zinnamturm.eu/pac/Coco.pac
+CommTCPAsync,Stewart Greenhill,Non-blocking TCP Streams Module.,"This module implements true non-blocking TCP streams using the CommStreams framework. The reference implementation (CommTCP) is only non-blocking AFTER a connection has been established, and can block the framework for a significant time during the establishment of a TCP connection. In some situations (eg. web proxy servers) this is unacceptable.
+
+The solution to this problem is to use the asynchronous functions provided by Winsock. Module CommTCPAsync allows TCP host-name resolution and connection establishment to be performed as background tasks. This is done in a way that is compatible with the CommStreams framework.
+
+",,http://www.zinnamturm.eu/pac/CommTCPAsync.pac
+Cow,Dejan Milicic,Cow is a subsystem aimed at compiler writers.,"Cow is subsystem aimed at compiler writers. When finished, it will contain generators of lexical and syntax analysers. As completed, various modules will be added to this subsystem.
+
+This is alpha release of Cow, framework intended for compiler writers. At the moment, only scanner generator exists, but as time passes more elements will be added. Whole project is intended to be my graduation thesis, and I would be very grateful to anyone that could point me to existing errors, omits and possible improvements.
+
+",,http://www.zinnamturm.eu/pac/Cow.pac
+CpcAllCaps,Fyodor Tkachov,Capitalisation of Keywords.,"The two procedures solve the problem of typing all-capitals keywords. The idea is that one types a keyword in small characters, then presses a key, and the keyword is converted to capitals.
+
+Additionally, there is a 'Capitalize and Expand' function included, that knows about the common compound CP statements. It does the same sort of thing regarding keyboard macros.
+
+",,http://www.zinnamturm.eu/pac/CpcAllCaps.pac
+CpcAsciiCoder,Helmut Zinn,Decode Eth Oberon V4 Cod files.,"The module CpcAsciiCoder can decodes and expand ETH Oberon V4 Cod files. I recommend to format the result with the CpcBeautifier.
+
+",,http://www.zinnamturm.eu/pac/CpcAsciiCoder.pac
+CpcBeautifier,Gérard Meunier and Helmut Zinn,Component Pascal Source Code Beautifier.,"The Beautifier is a program that reformats Component Pascal (Oberon-2) Source-Code.
+
+It features:
+
+
+Automatic indentation (insert/delete tabs, change blanks to tabs)
+Remove superfluous semicolons
+Insert missing spaces before and after operators
+Exported Names puts into bold font
+EXIT, HALT and RETURN statement puts into bold font
+Coloring Comments
+Reorder the IMPORT list into alphabetical order
+
+
+The Beautifier follows the style guidelines of the BlackBox Programming Conventions.
+
+",,http://www.zinnamturm.eu/pac/CpcBeautifier.pac
+CpcBitmaps,Robert D. Campbell,Bitmaps.,"This module allows an arbitrary View to be converted to a Bitmap.
+
+These Views are intended to be embedded in BlackBox Documents. The particular advantage of these Views is that when they are saved to disc they are compressed (using CpcCompressors), so typically take much less disc space than uncompressed Bitmaps.
+
+",,http://www.zinnamturm.eu/pac/CpcBitmaps.pac
+CpcBookmarks,Alexander Iljin,Bookmarks for text documents.,"When you edit a source code file it is often necessary to jump back and forth between two or three different areas making changes simultaneously. A valid solution would be to open the appropriate number of windows with the same document and to switch between them. BlackBox supports this with the command ""Window - New Window (F2)"". For example, you may open one window with TYPE declaration in view to add properties to an object, and the second window with a method implementation. Now you may add new properties while writing code that uses them. Unfortunately, in BlackBox all these windows will share the same text cursor position, so if you start typing right after you switch to another window, you will immediately be brought back to the place where you were typing in the previous view, effectively losing all the advantages of having two windows. To place the text cursor at a new position you have to use the mouse, and switch from keyboard to mouse and back again which slows you down and distracts you.
+
+Another problem with the approach of using multiple windows, is that you end up having a) many windows open to same file, b) very small amount of text in each window without its context, and c) very limited navigation capabilities using the ""Window"" menu, so you cannot quickly find the window you need.
+
+That is why you may find bookmarks useful. A bookmark is a small visible object (of type CpcBookmarks.View) which can be pasted into any text document. It looks like a little grey square with a digit in it. Bookmarks are numbered from 1 to 9, so you may have up to nine bookmarks per document. After you have placed a bookmark, you may quickly jump to that exact cursor position from anywhere in the document (the document's window must be active). Bookmarks are saved within the document, so the state is preserved between editing sessions.
+
+Like any other View object bookmarks are ignored by the compiler, so you don't have to put them in comments. They may be anywhere in your source code. Right where you need them.
+
+The disadvantage of bookmarks is that you have to remember the number location correspondence. You'll have to think up your own scheme for using those numbers. You won't be using more than three most of the time, so it won't be very hard to simply poke through numbers from 1 to 3 to find the place you need.
+
+",,http://www.zinnamturm.eu/pac/CpcBookmarks.pac
+CpcChill,Robert D. Campbell,"Bitmaps, ControlTips, FormTidy, Markers, Search and Stylists.","The Cpc 'Chill' modules provide a few utilites that may be of general use:
+
+
+Bitmaps - Allows an arbitrary BlackBox View to be converted, or copied, to a Bitmap
+ControlTips - Implements pop-up Tool-Tips when the mouse pointer goes over a Control
+FormTidy - Additional commands to size and position Controls (or any Views) in a Form
+Markers - A Text Wrapper that automatically makes changes clearly visible
+Search - A simple to use Text Search & Replace tool with many wildcard options
+Stylists - An object used to organise Rulers (TextRulers.Ruler) in a Document.
+
+
+The modules CpcMarkers & CpcStylists require (parts of) the subsystem Lib .
+
+StdCoded File <=>",,http://www.zinnamturm.eu/pac/CpcChill.pac
+CpcCompressors,Gérard Meunier and Robert D. Campbell,Data compression utility interface.,"Compressor Readers & Writers are objects that are similar to Stores Readers and Writers, but they also losslessly compress the data on disc.
+
+To make use of CpcCompressors some must be made available. Currently two are available in Pac, but in principle, others could be made available from other sources.
+
+",,http://www.zinnamturm.eu/pac/CpcCompressors.pac
+CpcControlTips,Robert D. Campbell,Pop-up Tips when the mouse pointer goes over a Control.,"The Module ControlsTips is a documentation aid that allows for small text boxes (Tool-Tips) to 'pop-up' when the mouse pointer goes over a Control.
+
+This functionality is implemented by simply 'dropping' a 'Wrapper' on each Control. The text, colours, and user proficiency level can be individually set for each Control.
+
+The pop-up timing parameters can be set globally, as can tip filters. For example all tips can be enabled, or disabled, or only tips aimed at 'Experts' can be enabled.
+
+",,http://www.zinnamturm.eu/pac/CpcControlTips.pac
+CpcETHConv,Koen Desaeger,A converter for loading Oberon System3 and Linz V4 file formats.,"The module CpcETHConv is an improved version of StdETHConv
+
+What's new in this version:
+
+
+V4 Table Elem
+Display empty folds correctly (StdEthConv does not)
+Readonly Stamp Elem, displays date as read from the imported file.
+'Open' command that remembers it's location, and is independent from the Blackbox current location
+Toolbar support
+
+
+",,http://www.zinnamturm.eu/pac/CpcETHConv.pac
+CpcEverywhere,Gérard Meunier,Documentation Tool.,"CpcEverywhere is able to search regular expressions in the files of Blackbox, by using the search engine of CpcRegul. It's a powerful tool for complex documentation search.
+
+",Babel Util,http://www.zinnamturm.eu/pac/CpcEverywhere.pac
+CpcFileBrowser,Marco Ciot,"File Browser with subsystem, folder and document windows.","The CpcFileBrowser is a subsystem file manager that provides a user interface to open documents. It is very useful for speeding up navigation between subsystems, directories and files.
+
+",,http://www.zinnamturm.eu/pac/CpcFileBrowser.pac
+CpcFloat,Gérard Meunier,Diagnosing floating point calculations precision.,"Do you have numeric problems with real numbers? This is not a specific problem of Component Pascal. All programming languages have the same kind of problem. Here is a little module to determine the precision of floating point calculations. The result depends on the floating point implementation on your machine and not of the programming language definition.
+
+Testing REAL numbers for equality should be done with the statement:
+   IF (ABS (real1 - real2) < epsilon) THEN ... END;
+
+The problem above is what value of epsilon should I use. After running this test you know which epsilon you can use on your machine. Remark: Math.Eps() gives the same value, but with less information.
+
+",,http://www.zinnamturm.eu/pac/CpcFloat.pac
+CpcFormTidy,Robert D. Campbell,Control layout tools for use in constructing Forms.,"FormTidy provides an additional set of commands that complement those provided in the Layout menu. They are used to help arrange the size and positioning of Controls in a graphical user interface Form. These commands are virtually essential for Forms with more than a few Controls.
+
+",,http://www.zinnamturm.eu/pac/CpcFormTidy.pac
+CpcIndex,Gérard Meunier,Cross reference builder and pretty printer.,"CpcIndex parses a text according to a grammar, with the help of Babel. It uses this analyze to pretty print the text and extract an index. The result is ready to print or can be used on screen for quick searching. Grammars for Oberon2, Modula2, Component Pascal and Babel are included.
+
+",Babel,http://www.zinnamturm.eu/pac/CpcIndex.pac
+CpcLangMapper,Werner Bossert,Language Mapper from / to Excel tables.,"Very often programmers and language translators are not the same person. This is easier for doing the translation outside the BlackBox in an Excel table. CpcLangMapper allows you to transform rows of alias/language pairs from Excel tables into a BlackBox (Subfolder)Strings.odc document or vice-versa. CpcLangMapper enhances the possibilities of CpcLanguage by introducing transformation of languages between MS Excel and BlackBox.
+
+",Ctls Dos,http://www.zinnamturm.eu/pac/CpcLangMapper.pac
+CpcLanguage,Gérard Meunier,Language for Component Pascal.,"BlackBox has many facilities. One of them is changing the language during the BlackBox session. Here is the module for accomplish this task. You can switch to any language which you like. But before you can use your favourite language you have to translate all the resource files. It would be nice to share your translations here.
+
+",,http://www.zinnamturm.eu/pac/CpcLanguageRU.pac
+CpcMenus,Helmut Zinn,Switching Menus.,"Certainly you have installed some or all modules from the Component Pascal Collection. Now you get a very long menu bar at the top of the BlackBox's window. I'm sure that you needn't the complete menu all the time. Would you like to switch the menu item off and on again? Here is a program which can do it.
+
+",,http://www.zinnamturm.eu/pac/CpcMenus.pac
+CpcPreprocessor,Stan Warford and Helmut Zinn,Named Integers in Component Pascal.,"Here you found an implementation of named integers for Component Pascal without changing the original compiler. The benefit of named integers is self-documentation. Named integers are eliminating the need to explicitly assign constants to symbols. It makes the declarations simpler and more clear. It also reduces the likelihood of the programmer accidentally assigning the same constant to two symbols.
+
+In general
+
+  TYPE Color* = (red, blue, green);
+
+is defined to be _exactly_ equivalent to
+
+  TYPE Color* = INTEGER; CONST red* = 0; blue* = 1; green* = 2;
+
+Named integers have none of the implementation problems of enumerated types. They are simply a syntactic sugar that provide an immense benefit of self-documentation for a very small price. They do not introduce a new type. Named integers are integers.
+
+",,http://www.zinnamturm.eu/pac/CpcPreprocessor.pac
+CpcRegul,Gérard Meunier,Regular Lexical Analyzer.,"CpcRegul is a lexical analyzer that can find and/or replace regular expressions in a text. It provides an application programming interface as well as a user interface. It is an advanced example of the Babel metacompiler.
+
+Here, Babel is used three times at each request: firstly to analyze the regular expression, check possible syntax errors and generate a Babel definition document for this expression; secondly to compile the previous definition document and produce a compiler (in fact, one or two compilers, according to the expression); thirdly to parse the user text with this compiler and find occurrences of the regular expression. All this process is accomplished in a flash behind the screen.
+
+",Babel,http://www.zinnamturm.eu/pac/CpcRegul.pac
+CpcSearch,Robert D. Campbell,Search & Replace with wildcards and text attributes.,"Module (Cpc)Search is a simple to use Text Search & Replace tool. It augments the supplied Find/Replace tool in two main ways: it keeps a record of the last few Search and Replace strings used, and it supports a rich set of wildcard search & replace options.
+
+With this module you can find red 'cats' and replace them with italic 'dogs'.
+
+",CpcControlTips,http://www.zinnamturm.eu/pac/CpcSearch.pac
+CpcSpell,Robert D. Campbell,A minimalistic Spelling checker.,"Spell checks the spelling of Texts.
+
+Spell requires that Microsoft Excel is installed.
+
+Spell is a minor modification of a module originally written by Oms (ToolSpell). It is published here by kind permission of Oms.
+
+As well as actually checking spelling, Spell has the following set of features: {} .
+
+It is already useful (I do use it), but I also publish it in the hope that someone will find the time to add some more features to it. I would like it to display a list of suggested corrections (which requires some knowledge of Excel and OLE automation, which I do not have), and to offer to make a selected correction (which requires some knowledge of TextModels and TextControllers; this I can possibly manage).
+
+",,http://www.zinnamturm.eu/pac/CpcSpell.pac
+CpcSplitter,Koen Desaeger,Split a window and scroll the two panes independently.,"The module CpcSplitter splits a window horizontally, and provides independent scrolling of the two panes. Programmers may find this useful: you can view the declaration section of a module in one pane while editing a procedure of that same module in the other pane.
+
+",,http://www.zinnamturm.eu/pac/CpcSplitter.pac
+CpcStats,Gérard Meunier & Helmut Zinn,Statistic of accessing the CPC website.,"Would you like to know how many users visit this website? How many downloads they have done? Which subsystems belong to the top 10? Here you are. Here you find the access statistic of August 2003.
+
+",Babel Pac,http://www.zinnamturm.eu/pac/CpcStats.pac
+CpcStylists,Robert D. Campbell,A Stylist is an object used to organise Rulers (TextRulers.Ruler) in a Document.,"A Stylist is essentially a list of Rulers Styles and associated StdProps. A Stylist object offers three main facilities:
+
+
+
+It allows several Rulers to belong to a Style Set. Rulers are said to belong to the same Set if they are the SAME (which means that they have the same Style, and, optionally, equal StdProps). When Rulers share their Style not only do they have their tabs etc in the same place, but moving one Rulers tabs immediately moves the tabs of all the other Rulers in the Set.
+
+
+It allows each Set to be 'named' . It can be helpful to give each Set a meaningful name, such as 'Tabs @ 2 & 5 cm', or 'Main heading Ruler'.
+
+
+It can manage a Text's StdProps. These are associated with each Ruler and with each Style in the Stylist. They can then be automatically applied to the text immediately after each Ruler in a flexible variety of ways.
+
+
+
+",Ctls,http://www.zinnamturm.eu/pac/CpcStylists.pac
+CpcTabs,Ivan Denisov,Tiled interface with tabs for open windows.,"Organize BlackBox aux windows in one or several flexible areas. All aux windows are presented in the tabs toolbar allowing to switch between them and close any window by click on a cross button.
+
+",,http://www.zinnamturm.eu/pac/CpcTabs.pac
+CpcTray,Kai Kietzke,Icon in System Tray.,"I have worked out a little module that provides an icon in the system tray associated with any blackbox menu. The system tray is on the right side of the windows task bar.
+
+You may also visit my website http://www.kietzke.net/.
+
+",,http://www.zinnamturm.eu/pac/CpcTray.pac
+CpcWhere,Gérard Meunier,"Where, Indexer of Source, Documentation & Symbol files.","CpcWhere creates on disk a database from which one can find very quickly any identifier defined or used in any source , documentation or symbol file, from its name or any part of its name. This version has a fast update process available and reads Unicode characters when scanning files.
+
+",Ctls Util Babel,http://www.zinnamturm.eu/pac/CpcWhere.pac
+Ctls,"Juan Antonio Ortega, Robert D. Campbell and Helmut Zinn","Buttons, Arrows, Sets, Sliders, RealField and UnitField.","Subsystem Ctls implements a range of Controls, and some related functions for using them:
+
+
+Buttons2   Controls whose appearance is an arbitrary View
+Arrows2   Some pre-configured examples of Buttons2
+Sets, SetsF   Graphical & textural controls for SETs
+Sliders   Graphical control for INTEGERs in the range [0 … 100]
+RealField   Control for REALs with many more formatting options
+UnitField   As RealField, but associates values with physical dimentions: eg Length in m & ft.
+
+
+The last is supported by the module Units which supports a wide range of SI and non-SI units, and can be accessed by other applications.
+
+Buttons are controls that use other singleton views to display the current state. They have primarily been implemented to create picture buttons but they are not limited to displaying pictures only. In fact any singleton view can be used as a button state. This implements Command Button Controls whose appearance is an arbitrary BlackBox View. It features an easy-to-use graphical interface for configuring the Buttons.
+
+A set of sample Arrows has been included. It provides 9 preconfigured versions of view buttons. The arrow forms included are top, up, down, bottom, start, left, right, end, and circle (well, we know a circle is not exactly an arrow, but it's still useful).
+
+Sets implements a control for SET-Variables.
+
+Sliders contains a simple Slider Control, a TwinSlider for specifying INTEGER ranges, and a simple CHARacter Edit Field.
+
+There are also controls for to display and handle simple Progress Bars as seen in many applications for long running commands. And last but not least there is a Trackbar & Mixer control.
+
+Figures can be thought of as simplified inert Controls. Their main use to go onto Forms, but there is no reason why they shouldn't be used in any Container or Document. Their function is decoration.
+
+Colour is a simple 'Property Editor' for updating the Color Property (part of Properties.StdProp) of items.
+
+RealField and UnitField are modules that implements a Field, or 'Edit Field', Control similar to the standard BlackBox Field Control. This Control is limited in that it can only be linked to variables of type REAL, however it allows more options for formatting the REAL number.
+
+The first download is the Chill part without obsolete files. The second download includes the obsolete files for backwards compatibility.
+
+",,http://www.zinnamturm.eu/pac/Ctls.pac
+Ctlsx,Gerhard Marent,Tables and other Controls Extensions.,"Subsystem Ctlsx contains a collection of controls e.g. Buttons, Captions, Fields, Tables.
+
+
+
+CtlsxButtons work as CtlsButtonsV, but it is also possible to use them as radio buttons. A radio button has to be linked to an integer variable. In this case, the command of the button must be integrated into the notifier procedure.
+
+
+CtlsxCalendars includes a Calendar Control that shows one month. It is possible to define the range of the calendar and toggle from month to month. Special days e.g. holidays can be defined by mouse clicks.
+
+
+CtlsxCaptions adds color to the caption and allows changing the color to red, when the caption is linked to an integer variable and the corresponding number equals level property.
+
+
+CtlsxColorIndicators just show a color. The form of the control can be changed by the properities inspector (Rect / Oval).
+
+
+CtlsxFields allows formatation of integers and reals and a more convenient input of real numbers with the German keyboard. Also character variables can be linked to CtlsxFields.
+
+
+CtlsxHourCtlsx is a control which allows selection of hours of one week, including different types of special days, e.g. holidays.
+
+
+CtlsxLines draws horizontal and vertical lines (not really a control, but useful for forms)
+
+
+CtlsxStdButtons provide a selection of prefactored buttons and comes with a form that eases application.
+
+
+CtlsxSets allows selection of bits of a variable of type SET.
+
+
+CtlsxSliders contains a slider control, similar to ObxSliders.
+
+
+CtlsxTables is a table Control, which allows some formatation (numbers, background, font, frames, ...). You can add skills to each cell e.g. to prevent editing, allow insertion of cols and rows, skip cells, toggle strings (yes/no, right/left, ...) by mouse click. Limited conversion to Excel is also possible.
+
+
+
+",Misc,http://www.zinnamturm.eu/pac/Ctlsx.pac
+Datafit,Gérard Meunier,Non-linear data modelling by the simplex method.,"This program tries to fit a model to a set of data by searching the least squared difference curve. The minimization is obtained by the so-called ""simplex algorithm"".
+
+",,http://www.zinnamturm.eu/pac/Datafit.pac
+Dbu,Stewart Greenhill,HTTP Client and Server Utilities.,"Subsystem Dbu is a collection of modules for creating HTTP servers and clients. It provides low-level buffering of network streams, allowing ASCII files to be easily sent and retrieved via a TCP/IP channels.
+
+An unusual feature of the HTTP server implementation is that a single server can function both as origin server and proxy server. I developed this design to allow me to experiment with dynamic document rewriting. An intelligent proxy can dynamically create content as the user explores the web and merge this content with external HTML documents ""on-the-fly"" as they are retreived.
+
+Note that this is not a ""quality"" release, as I haven't had time to properly structure and document many functions. This code has served its purpose and will not be developed further (by me, anyway). However, the server functions are reasonably modular. New facilities can be added fairly easily by implementing HTTP.Handlers and HTTP.Filters. See Dbu/Docu/Manual for more details.
+
+",,http://www.zinnamturm.eu/pac/Dbu.pac
+Demo,Robert D. Campbell,Sample programs of using the Chill group.,"A collection of demonstrations ranging from the very simple (Hello World), through the practical (TinySine & Rose demonstrate simple uses of the module LibPlotters) to the sophisticated.
+
+Donald Knuth has a very flexible (abstract) problem solving algorithm, called ""Dancing Links"" or ""DLX"". This is implemented with examples that include an efficient Sudoku solver and a Polyomino placement solver.
+
+The use of ""Turtle graphics"" (called Gerbil graphics here!) to create recursively designed curves, such as Dragon curves is also demonstrated.
+
+The most sophisticated example is a mapping tool, with many options, that can download worldwide maps in many formats such as Open Street Map or Open Cycle Map, and manage Tracks and Routes in gpx format compatible with many external GPS devices.
+
+",Ctls,http://www.zinnamturm.eu/pac/Demo.pac
+Desktop,Fyodor Tkachov and Helmut Zinn,Persistent Desktop.,"This subsystem adds a little bit of persistence to the BlackBox desktop. It allows you to save and restore the documents open on your desktop, and some state information about them (such as their window positions). The desktop information is stored in desktop files, it is therefore possible to maintain a series of desktop files. If you leave BlackBox the current desktop file is automatically stored and reloaded once you restart BlackBox. Most importantly, the windows now remember selections and what is shown in each window. The ordering of windows is now also preserved.
+
+",,http://www.zinnamturm.eu/pac/Desktop.pac
+DevCPConv,Marc Frei and Bernhard Treutwein,Oberon Conversion Tool.,"For ease of porting and to simplify the migration from Oberon to Component Pascal, this conversion tool is provided which automates much of the necessary conversion process. The converter translates Oberon/L source code (which is assumed to be syntactically correct) into Component Pascal source code. Changes are marked.
+
+Oberon/L was the marginally changed version of Oberon-2 which was used in Oberon/F which in turn was the previous name of BlackBox. The translator should work with standard Oberon and Oberon-2 source code. Active Oberon will need some manual intervention before it can be translated correctly.
+
+This module stems from BlackBox version 1.3x and is usable with the current version of BlackBox. Kudos to Marc Frei of Oberon Microsystems for digging out and providing this source.
+
+",,http://www.zinnamturm.eu/pac//DevCPConv.pac
+DiaPlot,Ivan Denisov,2D diagrams plotting.,"DiaPlot allows to plot 2D graphs with unlimeted number of curves, to make animated graphs, to export graphs to ""csv"" and ""mpl"" formats.
+
+",,http://www.zinnamturm.eu/pac/DiaPlot.pac
+Dos,Helmut Zinn,An Update Program.,"Subsystem Dos contains several tools which I use for
+
+
+data replications (incremental backups)
+comparing two versions of BlackBox
+software testing (test harness)
+
+
+The most importend tools is an update program for data replications. I implement the replication in two steps: compare & update. The first step compares two directory trees and list all difference in a document. You can proof this list and edit it. Based on this document, the second step run through that list and copy the new and changed files. Old files, which doesn't exist in the source, are deleted in the destination.
+
+Another program can compare two version of BlackBox and create a document of differences including links to the old and the new files.
+
+For software testing I need a procedure which compares 2 files line by line. You find such kind of comparison inside this subsystem. DosDiffFiles are my basic modules for the test harness. I need them during the software development and maintenance. I use them for testing of my programs with test pattern and proofing the program result automatically.
+
+Further there are programs for time messurement, calculating MD5 and SHA-256 checksums.
+
+",Pac,http://www.zinnamturm.eu/pac/Dos.pac
+Dragoncity,Brett S. Hallett,Developing Programs with BlackBox Oberon and MySql.,"This is my collection of notes, example code, etc... I created to ""fill in"" the gaps not explained by the standard documentation supplied with Blackbox Oberon on how to actually write useful programs.
+
+The book is approximately 160 pages and is not complete. But still useful !!
+
+It covers Installing, Setup and Interfacing to MySQL in depth, writing report programs (including a complete SQL report generator), writing complete GUI/MySQL systems, etc... It does not cover the more esoteric usage of the language, because I have'nt the need to be bothered to work them out. I make no attempt to cover the complete BlackBox Oberon Language.
+
+Blackbox Oberon is a very powerful programming tool and well worth consideration. But I should also advise you that while I really like Blackbox Oberon I have found it lacks certain features that I need for commercial database programming development.
+
+For more information read my manuscript in PDF format (1.8 MByte). The same documentation is also in the BlackBox StdCoded File. You find it at 'Draconcity/Docu/DevelopingInBlackbox.odc'. You'll find further information about MySQL at http://www.mysql.com/.
+
+",,http://www.zinnamturm.eu/pac/Dragoncity.pac
+Elicitor,Mary Kynn,Distributions for a logistic regression model.,"The program, Elicitor, is for the elicitation of expert prior distributions for a logistic regression model, which I was extending to generalised linear models. The hooks are there but only a couple of alternatives were actually written. The controls are fairly intricately considered as the psychological components of eliciting distributions was a big part of my work. This may make the program overly complex. Of course I'm willing to correspond to anyone who wants to take on what I started.
+
+",Logit,http://www.zinnamturm.eu/pac/Elicitor.pac
+Epse21,Fyodor Tkachov,Efficient Programming for Sciences and Engineering in the 21st Century.,"This package of software helps novices (physicists) to start programming in Blackbox. It is the result of a would-be project ""Efficient Programming for Sciences and Engineering in the 21st Century"" which was discussed last summer, and whose first visible result is the Oberon Day 2004. I plan to add more examples there in future.
+
+",Babel Util Ctls Plot Lib,http://www.zinnamturm.eu/pac/Epse21.pac
+Escher,Gérard Meunier and Robert D. Campbell,Escher constraint-drawing editor.,"A constraint-drawing editor allows the user to maintain a set of Points and Figures on the drawing plane. Points come in two flavours: Free Points and Constrained Points. While the former can be freely placed and moved by the user, the latter depend on other Points, which will (fully or partially) define the position of a Constrained Point. If necessary, the system will move Constrained Points automatically to maintain the respective constraints. Examples of Constrained Points are points located in the middle of two given ones, on a corner of a rectangle, or anywhere on a circle.
+
+Escher is a reworking of the original 'Constraint Drawing' package Brahe published by Joakim Björklund, Niclas Forsen, Gabor Magyar, Peter Mitts, and Wolfgang Weck 1997.
+
+Escher uses the original constraint drawing concept and implementation from Brahe virtually unchanged, but with the following differences:
+
+
+The underlying data type has been changed from INTEGER to REAL.
+Several new Point and Figure types have been added.
+The user interface code has been extensively rewritten to provide new and improved functionality.
+Multi-language support has been added to the user interface (English, French & German).
+A few old bugs have been removed; no doubt some new ones have been added!
+The Documentation has been significantly extended & updated to reflect the above changes.
+A Module that adds Animation to Escher drawings.
+Support for drawing conic sections (ellipses and parabolas etc).
+
+
+The dependancies Escher has on non-Oms subsystems are:
+
+
+Optional: CtlsRealField & CtlsSliders.Slider. ('Oms-only' versions of the Forms are also provided.)
+
+
+Escher uses optional the services of Ctls.
+
+StdCoded File <=>",,http://www.zinnamturm.eu/pac/Escher.pac
+Filter,Robert D. Campbell,Digital and other filter design and analysis.,"Filter provides extensive support for designing and using digital FIRs (Finite Impulse Response filters), for DFTs (Discrete Fourier Transforms), many fast algorithms (FFTs) for implementing them, and many fast functions that exploit them (such as convolutions).
+
+A range of analogue filters are also supported, as are both Fourier Series and (analogue) Fourier Transforms.
+
+The FFT algorithms are written with an emphasis on accuracy; important when they are used by the Multi subsystem for fast multi-million digit arithmetic.
+
+",Ctls Multi Lib Algebra,http://www.zinnamturm.eu/pac/Filter.pac
+Frame,Robert D. Campbell,An abstract hierarchical Specification framework.,"Frame implements two major capabilities:
+
+
+
+An abstract hierarchical 'Specification framework' for specifying the defining parameters of large systems comprising sub & subsub systems. Full version control and history recovery, operating at both system & subsystem level, is build in.
+
+
+An abstract 'Calculator' engine for evaluating the relationships between a small (≤ 32) number of parameters. The relationships are defined, and the calculator automatically uses these to determine any parameter's value provided sufficient constraints are imposed.For example, if given the relation ""Volts = Amps × Ohms"", it knows how to calculate any output from any two inputs.
+Practical examples are provided.
+
+
+
+",Ctls Lib,http://www.zinnamturm.eu/pac/Frame.pac
+FreeImage,Necati Ecevit,"Loading, displaying and saving popular graphics image formats.","This subsystem contains Component Pascal wrapper for FreeImage.dll (v3.17.0).
+
+What is FreeImage?
+FreeImage is an Open Source library project for developers who would like to support popular graphics image formats like PNG, BMP, JPEG, TIFF and others as needed by today's multimedia applications. FreeImage is easy to use, fast, multithreading safe, compatible with all 32-bit versions of Windows, and cross-platform (works both with Linux and Mac OS X). For more information about FreeImage look at http://freeimage.sourceforge.net/.
+
+",,http://www.zinnamturm.eu/pac/FreeImage.pac
+GftAudio,Douglas G. Danforth,Sound Recording and Playing.,"Module GftAudio provides basic sound handling capability based on Microsoft's Multimedia libraries (WinMM). Recording and playing of 8bit or 16bit data is provided in mono or stereo form. Your sound card determines whether it supports all of the formats specified by GftAudio.
+
+",,http://www.zinnamturm.eu/pac/GftAudio.pac
+GftGlyphs,Douglas G. Danforth,Inserting special characters into text files.,"Module GftGlyphs inserts special characters into text files by clicking on a palette of symbols. The carat in the target text window is maintained when clicking on the palette so that one can ""type, click, type"" without having to reposition the carat.
+
+This release includes the font file Gft.ttf with special mathematical symbols included. See the documentation for what symbols are supported.
+
+GtfGlyphs",,http://www.zinnamturm.eu/pac/GftGlyphs.pac
+GftMessages,Douglas G. Danforth,BlackBox Messages Notification.,"GftMessages provides notification of (almost all) BlackBox messages using the StdLog by use of WITH to determine which message has been passed to a handler routine. If there are some messages that I have missed then please let me know. The name of the message is written to the log but any fields of the message are not. This is a great way to see what messages are being sent to your views.
+
+",,http://www.zinnamturm.eu/pac/GftMessages.pac
+GftSearch,Douglas G. Danforth,File Searching.,"GftSearch allows multiple strings to be searched simultaneously. Arbitrary directories and files can be searched.
+
+For example one can search for the following 3 strings simultaneously:
+   callback
+   call back
+   procedure variable
+
+Options
+OR    specifies that any of the entered strings found in a file will trigger a report.
+AND  specifies that all of the entered strings must be in a file to trigger a report.
+
+The search mechanism builds a finite state machine that simultaneously looks for all strings sought (there can be hundreds of them). Search time is independent of the number of strings sought and is a linear function of the length of file searched. The core GftSearch can be embedded in a large number of applications since the user determines from whence the bytes comes and how to handle pattern matching when it occurs (See GftSearchFile for example).
+
+The routine is very fast and examines each byte in a file only once. The routine is based on XSearch developed by Scott Daniels and Pentti Kanerva in the 1970s.
+
+Compared to BlackBox 'Search' it is about 5 times faster (this must be qualified since the first time 'Docu' is searched both techniques yeild similar times. It is the second and subsequent times that Docu is seached that the speedup occurs. I believe this has nothing to do with search initialization but rather with Blackbox or Microsoft's dirctory allocation scheme).
+
+GtfSearch",,http://www.zinnamturm.eu/pac/GftSearch.pac
+GftWrappers,Douglas G. Danforth,Keyboard & Mouse Wrapper.,"An arbitrary view can be wrapped (and unwrapped) such that keyboard and mouse events can be handled by the view. When a mouse key is held down, the wrapper does not block other BlackBox processes (e.g. Clock).
+
+GtfWrappers",,http://www.zinnamturm.eu/pac/GftWrappers.pac
+Good,Gérard Meunier,Entertainment.,"This software calculates the succession of operations from six integer data to an integer result. You can compete with friends to find who will guess the solution first.
+
+",Babel,http://www.zinnamturm.eu/pac/Good.pac
+Gr,Wojtek Skulskii,Data Acquisition and Monitoring Toolbox.,"BlackBox/Gr (Gr in short) is a toolbox of histogramming and graphical modules to support developing interactive data acquisition (DAQ) and monitoring programs. Such programs can be used to collect and display data from laboratory equipment (e.g., voltmeters), the DAQ modules (e.g., CAMAC modules), and various sensors and probes (e.g., temperature probes, Hall effect probes, etc.). You find slides and further information at http://www.pas.rochester.edu/~skulski/.
+
+",,http://www.zinnamturm.eu/pac/Gr.pac
+Han,Werner Bossert,Han Numbers - 中文数字,"The traditional Chinese numerals are used in the East Asian cultural sphere, in Greater China, in Japan, in Korea and in Vietnam and is one of the written numeral systems. They are based on Chinese characters (Hànzì) that correspond to numerals in the spoken language. Large numbers follow the Chinese tradition of grouping by 10,000.
+
+There are two sets of characters for Chinese numerals: one for everyday writing and one for use in commercial or financial contexts. Negative numbers are formed by adding (负, 負) before the Han number.
+
+",Ctls,http://www.zinnamturm.eu/pac/Han.pac
+Hermes,Gérard Meunier,Scientific Spreadsheet.,"Hermes is a tool for making complex calculations and 2D plotting. It can handle and combine real functions, set of measured values, operations like derivations, integrations, fast Fourier transform, data modeling, etc... It has a general interface for data acquisition systems and can acquire data, make simple calculations on them and plot the result in real time. A data simulator and a Fourier synthesizer are included.
+
+Hermes is used every day for physics teaching.
+
+For the moment, all the user interface and its documentation are in French, even if all is ready for their translation (but time is not extendable...). The documentation may not be up to date everywhere, for Hermes is changing every day. You can get the most recent version of Hermes at http:\\gemeu.free.fr.
+
+",Escher Babel CpcBitmaps Util Ctls CpcFloat,http://www.zinnamturm.eu/pac/Hermes.pac
+Html,Helmut Zinn,Html Importer and Exporter.,"You can translate BlackBox documents to html files and wise versa. All tags that are not translated are in a tag view. The tag views can be created, expanded, collapsed, shown and hidden.
+
+
+Read html files from BlackBox via menu [File][Open]
+Write html files from BlackBox via menu [File][Save] or [File][Save As...]
+Creating tag-views in odc documents
+Deleting all tag-views in odc documents
+Convert all odc documents to html
+Convert all html documents to odc
+
+
+",Ctls,http://www.zinnamturm.eu/pac/Html.pac
+Http,Josef Templ,Http/Https-Server.,"The subsystem Http provides a minimal and safe subset of an HTTP/1.1 server running as a background action. It is minimal and safe in the sense that it does not handle any http request itself but delegates all requests to so-called servlets. The server only handles the http protocol, i.e. it listens on a local address, accepts connections, reads from and writes to a connection, and eventually closes a connection. The server is non-blocking.
+
+   The http server can be run with any protocol driver that provides CommStreams listeners. This includes CommTCP for running the server unencrypted over plain TCP/IP connections and HttpCommSSL for running as an https server over an SSL/TLS encrypted TCP/IP connection. The latter case requires additional openssl libraries, certificate and key files, and a basic understanding of SSL/TLS. For details please refer to the openssl documentation.
+
+   A servlet is registered for a particular prefix of the server's name space. It is the task of the servlet implementation to handle http requests directed to the name space part that is covered by the servlet. The implementation of a servlet may itself be inverted, i.e. it may be split into a sequence of continuations until a response is delivered. This enables long-running servlet implementations to be split into smaller pieces and allows for intertwined handling of multiple requests.
+
+   The design of the http server lends itself for implementing so-called REST APIs based on Component Pascal. By implementing and registering a servlet an application specific REST API can be easily provided without the complexities, safety issues, and interfacing problems of a full blown web server.
+
+   The http server itself does not introduce anything like a session state because http is a state-less protocol. However, sessions can be created easily by means of so-called cookies, which can be set and get via header fields. A session is a server side data structure identified by a unique id, e.g. a sequential number or a GUID. This id can be sent to the client upon creation of the session via a Set-Cookie response header field (rfc 6265). The Client will then add a Cookie request header field with the same content, viz. the session id, with future requests to the same site.
+
+Limitations:
+There is currently no support for named virtual hosts.
+Currently supported URI formats: Request URIs are expected to be percent-encoded according to rfc 3986. The query part of a GET URI or a POST message content expects the content type application/x-www-form-urlencoded. Utf-8 is used as the character set.
+
+Currently supported content encodings: There are no encodings other then the 'identity' encoding, i.e. no gzip or compress.
+
+Two servlets are provided together with the http server:
+- A SentinelServlet is registered for the empty name space prefix, i.e. it matches any request that is not handled by another servlet. Its task is to report an error message for any unhandled request.
+- An EchoServlet is provided for testing and debugging purposes. Its task is to return the http request as its html result. This allows for inspection of http requests, in particular of the requested URI and the provided header fields and query parameters. The echo servlet is not registered by default.
+
+An additional servlet (HttpWeb.Servlet) is provided for serving files located in a specified root folder. This servlet, although quite simple, turns an http server into a more traditional web server. For specifying a favorite web icon for your site another servlet (HttpWeb.FaviconServlet) is provided.
+
+",,http://www.zinnamturm.eu/pac/Http.pac
+Info,Helmut Zinn,"Check, collect, link, replace & search all documents.","The Info subsystem is a collection of tools to manage links and documents. It supports the following tasks:
+
+
+Open a document in the same mode (browser or edit) as the current one
+Start a program via link
+Translate a website
+Search through all documents
+Create link list (table of contents)
+Collect the documents
+Correct text & links via change list
+Build Cross-reference (subject index)
+Check filenames
+Check links
+Replace in all documents
+
+
+If you insert the following link in a odc document
+   <InfoCmds.Start('http://www.oberon.ch')>Oberon Microsystems<>
+then you have a link to the website of ...
+
+If you insert the following link in a odc document
+   <InfoCmds.Start('mailto:my.friend@mailbox.com')>mailto:my.friend@mailbox.com<>
+then you can send a mail to ...
+
+Another application of this subsystem is to translate a website. Select an url in your text document (e.g.: http://www.oberoncore.ru) and press the key Shift+Ctrl+L simultaneously. You get the translation of the oberonecore website from Russian to English.
+
+And so on ...
+
+",Ctls Dos Pac,http://www.zinnamturm.eu/pac/Info.pac
+Info21,Fyodor Tkachov and Helmut Zinn,Project Informatika-21. Component Pascal as a first language.,"The value of Oberon/CP as a first language is obvious to most of us. The Info21 subsystem is a collection of tools to support this tasks. Russian high schools use Info21 in the Project Informatika-21. One module of Info21 provides an approximation to the Turbo Pascal graphics library.
+
+You can participate the International Olimpiad in Informations Problems and write your solutions in Component Pascal with this subsystem. Another module shows how an exe-file can be generated for automatic processing by programming contest jury.
+
+Info21 uses optional the services of Dos
+
+StdCoded File <=>",,http://www.zinnamturm.eu/pac/Info21.pac
+Kine,Gérard Meunier,Simulation Tools.,"This software provides some simulations in mechanics.
+
+It includes the simulation of:
+
+
+the motion of a satellite;
+a projectile in a homogeneous gravity field, with or without friction;
+a pendulum.
+
+
+",Ctls Babel,http://www.zinnamturm.eu/pac/Kine.pac
+Kurzweil,Helmut Zinn,Small programs for education and fun.,"Currently available programs:
+
+
+Color Clubs (Farbenkreuz)
+Prime Number Helix (Zahlenspirale)
+
+
+",TboxTimer,http://www.zinnamturm.eu/pac/Kurzweil.pac
+Lib,Robert D. Campbell,Engineering & Scientific library.,"Lib is a subsystem that contains a library of general purpose routines suitable for engineering type applications. It comprises modules for graphics (2D, 3D, timeseries), complex numbers, vectors, matrices, eigensystems, integration, root finding, special functions, random variates, linked lists, sorting, factorisation, timing, large sets, and an extended formatter.
+
+This version of Lib contains many years of development since the last version was published, and some interfaces will have changed. It should be easy to adapt client code. Any issues could be discusson at http://community.blackboxframework.org/viewforum.php?f=38.
+
+",Ctls CpcChill CpcCompressors Casket,http://www.zinnamturm.eu/pac/Lib.pac
+Logit,Mary Kynn,Visualising the parameters of a logistic regression equation.,"Tools for reverse-engineering the logistic regression model. That is, if the expert has given their opinion via the graphs in Elicitor, these tools can be used to input the parameters of the posterior distribution to get graphs to compare the changes from the prior in the (hopefully sensible) format the prior was elicited in. Note that one needs to be careful of context and interpretation!
+
+",Elicitor,http://www.zinnamturm.eu/pac//Logit.pac
+Lola,Niklaus Wirth and Josef Templ,Lola.,"The subsystem Lola provides a port of the logic description language Lola-2 designed and implemented by Prof: Niklaus Wirth at ETH Zurich. Lola-2 uses a syntax similar to Oberon (and Component Pascal) for describing digital circuits (logic) that can be implemented for example on a Field Programmable Gate Array (FPGA). Lola texts are translated into the Hardware Description Language (HDL) Verilog. Hardware vendor specific tools must be used for mapping a Verilog program onto a particular hardware. The advantage of using Lola over Verilog is that it is much simpler and less error prone due to increased regularity and static error checking. For details about Lola-2 see the Lola-2 homepage.
+
+",,http://www.zinnamturm.eu/pac/Lola.pac
+Media,Juan Antonio Ortega,Media Player.,"Would you like to play your favourite music with BlackBox? Do you want to watch your videos? Now it's possible with subsystem Media! With this subsystem you can play media files such as wav, mp3, avi, and so on. Audio CDs are also supported.
+
+",Ctls Dos Pac Babel,http://www.zinnamturm.eu/pac/Media.pac
+MGui,Gerhard Marent,MGuiBase implements some basic elements for GUIs.,"Content and main features
+
+ 
+
+
+Colors - Collection of colors, used in controls and forms.
+ColorIndicators - Shows filled rect or oval with defined color.
+FormViews - Form view, that can resize it's content.
+MonthFields - Field, that handles month / year.
+TabViews - Tab view, that can hide the tab header and can be used to reduce complexity of forms.
+Accordions -Similar to tab views but different in apearance. They also contain a status field.
+MandatoryFields - Field, that indicates missing input or input out of valid range.
+TextButtons - TextButton has the usual properties of a button but is represented by text string.
+
+
+MGui uses optional the services of CpcFormTidy.
+
+StdCoded File <=>",,http://www.zinnamturm.eu/pac/MGui.pac
+Misc,Gerhard Marent,"Procedures for Calendar, Time-Handling, Dialog, Lists and Sorting.","This Library provides 10 modules:
+
+
+Module MiscCalendar - calendar procedures.
+MiscTimeSeries - simple time series handling.
+MiscCLists - simple linear list, based on items of type Stores.Store.
+MiscSLists - simple linear list, based on items of type Stores.Store.
+Dialog - Some procedures to ease the use of Dialog.List.
+Sorts - Some sorting procedures.
+States - State names and their abbreviations.
+Scrollers - A type of scroller.
+TextWrapper - A wrapper for text views, embedded in forms.
+TextUtil - Some text utilities.
+
+
+",,http://www.zinnamturm.eu/pac/Misc.pac
+Mk,Michael Kühn and Helmut Zinn,Learning a Programming Language with Mk Turtle Grafik - the easy way!,"You are welcome! MKTurtle is a learning environment. It helps pupils to getting started to learn a programming language.
+
+We introduce a programming environment, which is easier to use than usually. Computer science teacher should have a look and try out the turtle grafik.
+
+The turtle grafik uses the programming language Component Pascal (Oberon-2). The necessary programming environment is called BlackBox. Everyone can download BlackBox from the web site www.oberon.ch.
+
+The documentation of the turtle grafik is in German completly. You found a short German-English dictionary inside Quick-Start. There are several programming examples with source code.
+
+See also software for teaching from Michael Kühn under http://www.kuehnsoft.de/
+
+",Ctls,http://www.zinnamturm.eu/pac/Mk.pac
+Multi,Robert D. Campbell,Arbitrary ultra high precision arithmetic.,"Multi implements multi-precision arithmetic for integers and real numbers (using both fixed and floating point formats). There is a comprehensive real function library (Sines, Exponentials, Log etc) tested to 10000 decimal places, but probably good for many more.
+
+There are advanced 'fast' algorithms (based on Fourier transforms (FFTs) and Number Theoretic Transforms (NTTs)) that implement basic arithmetic effectively to multi-million decimal places. This is used to implement a variety of fast algorithms to compute Pi to this precision. There are also several fast integer factorisation algorithms implemented (such as the Continued Fraction method), although the most sophisticated methods (Elliptic Curve and Number Field Sieve) are not available.
+
+This subsystem also implements arithmetic for the 32-bit & 64-bit 'Cardinals', ie unsigned integers, and algorithms that use these (eg factorisation).
+
+",Ctls CpcChill Filter Algebra,http://www.zinnamturm.eu/pac/Multi.pac
+My,Douglas G. Danforth,Interaction with the BlackBox framework.,"Subsystem My is intent to simplify the interaction with the BlackBox framework.
+
+
+
+MyFiles - File Opening and Closing
+The intent of MyFiles is to simplify the opening and closing of files. It introduces ReadControllers and WriteControllers to symmetrize the operations of opening and closing old and new files.
+
+
+MyTexts - Opening Text Scanners and Formatters
+MyTexts simplifies the opening and closing of scanners and formatters provided by TextMappers. It introduces ReadControllers and WriteControllers to symmetrize the operations of opening and closing.
+
+
+MyObjects - Abstract objects
+MyObjects supports the basic types of Component Pascal as instances of an abstract object. The abstract object is meant to be used in Lists, Sets, Stacks, Rings, Queues and other computer science data structures.
+
+
+MyLists - Lists of abstract objects
+MyLists supports the storage of (abstract) objects in a linear list. Elements of the list may be duplicated. One can add to the head or tail of the list. One can iterate over the list using First (which initiates an iterator) and then using Next(o) to obtain the object at the current position of the iterator. Next fails when it reaches the end of the list. While iterating one can add new element (behide the iterator's position) or delete an element (behind the iterator's position). MyLists is a basis for sets, stacks, and queues.
+
+
+MySets - Sets of abstract objects
+MySets implements the storing of abstract objects in sets. A set is a collection of objects with no repeats. Elements may be of homogeneous or heterogeneous type. For example a set could consist of the three objects a string, a list, and a set. It is your choice which objects are included in a set. Uniqueness is guaranteed through the Equal method of an object. Objects of different type should never be equal.
+
+
+MyCoder - StdCoder extended
+MyCoder adds two procedures EncodeThis and EncodeObjectList to StdCoder.
+
+
+MyProject - Project handling tools
+MyProject simplifies the creation and maintenance of projects and applications based on a root module. One can compile, unload, encode, make an exe file, and list the hierarchy of modules referenced from root.
+
+
+
+",,http://www.zinnamturm.eu/pac/My.pac
+Nav,Robert D. Campbell,"Navigating on an Oblate Sphereoid, in particular the Earth model.","This subsystem provides several facilities of use for navigation and mapping. It provides particular support for the WGS84 model of the Earth, for several commonly used general map projections, and particular support for the United Kingdom map projection.
+
+The support comprises background documentation, interactive user tools, and programmers subroutines.
+
+Of particular note are implementations of the Universal Transverse Mercator and Universal Polar Stereographic projections, and an exact implementation of the Ordnance Survey of Great Britain OSTN02 & OSTN15 projections.
+
+There is the full EGM96 geoid model, the full Ordnance Survey OSGM02 & OSGM15 geoid models, and the Ordnance Survey Digital Terrain Elevation Data (DTED) model of Great Britain with 50 m postings.
+
+Further tools calculate geodesics, and calculate gimbal angles for sight-line pointing devices, both operating with ellipsoidal Earth models.
+
+",CpcChill Ctls Algebra Lib Multi Filter,http://www.zinnamturm.eu/pac/Nav.pac
+Numer,Gérard Meunier,Video digitizer.,"This software lets you digitize the positions of moving points in video movies. It has been tested with avi files. Acquired data may be exported to spreadsheets or to Hermes. One can visualize reference frame changes too (translation case only).
+
+",Babel Plot,http://www.zinnamturm.eu/pac/Numer.pac
+Ogl,Eugenius Pokora,An interface to OpenGL.,"OpenGL is an environment for developing interactive 2D and 3D graphics applications. OpenGL gives software developers access to geometric and image primitives, display lists, modeling transformations, lighting and texturing, anti-aliasing, blending, and many other features.
+
+OpenGL(R) is a registered trademark of Silicon Graphics, Inc. A lot of Information about OpenGL, tutorials, source codes, etc. is available from http://www.opengl.org/.
+
+The distribution consists of:
+
+
+the source codes of an OpenGL interface for BlackBox 1.4 (Windows only).
+interface modules to the DLLs opengl32.dll and glu32.dll.
+the module Contexts, which allows to display an OpenGL graphics in a BlackBox view.
+some auxiliary modules and about 50 example programs.
+a very short description of the subsystem.
+
+
+",,http://www.zinnamturm.eu/pac/Ogl.pac
+OglChill,Robert D. Campbell,An extension to the 'Base' or 'Original' Ogl subsystem adding higher level functionality.,"The Ogl 'Chill' modules are a software layer above the original Ogl modules which they use as an interface to the Open GL (Graphic Language) dynamic link libraries (DLLs) opengl32.dll, glu32.dll. It gives (relatively) easy access to some graphic capabilities implemented in OpenGL in a ready-to-use form. Explicitly it implements an extension of the Plotter object defined in the Lib Subsystem.
+
+Examples are provided, as are complete Menu items that will convert simple two-dimensional Map plots into full three-dimensional models supporting arbitrary rotations, complex lighting effects, and hidden surface removal.
+
+",Ctls Lib Ogl,http://www.zinnamturm.eu/pac/OglChill.pac
+OglGlut,Eugene Temirgaleev,GLUT interface as an addition to the Ogl subsystem.,"GLUT is the OpenGL Utility Toolkit, a window system independent toolkit for writing OpenGL programs. It implements a simple windowing application programming interface (API) for OpenGL. See http://www.opengl.org/resources/libraries/glut/.
+
+GLUT is not open source. Mark Kilgard maintains the copyright.
+
+The distribution consists of:
+
+
+the source codes of the GLUT interface for BlackBox 1.5-1.6 (Windows only).
+interface module to the DLL glut32.dll (isn't distributed with Windows, see Installation).
+brief documentation and the Russian translation of Ogl documentation.
+several auxiliary modules and example programs.
+
+
+",,http://www.zinnamturm.eu/pac/OglGlut.pac
+Omi,Dominik Gruntz,Change the subsystem name in forms.,"Is there any way to do a search & replace (e.g. for a changed subsystem name) in forms/tool dialogs? Yes, that is possible. You simply have to iterate over the content of a container and ask each view for the control properties and change those accordingly.
+
+Below you find a simple module which performs this task. A source string is replaced by a new string in the link, label, guard and notifier fields.
+
+Subsystem Omi is useful for BlackBox 1.3.x. At BlackBox 1.4 this feature exist already in menu [Layout].
+
+",,http://www.zinnamturm.eu/pac/Omi.pac
+Onedim,Günther Sawitzki,Diagnostic Plots for One-Dimensional Data.,"This is a loose leaf collection of work sheets on common (or not so common) diagnostic plots, built up to help in every day consulting. The collection is presented in as an active document, allowing to use your own data or your simulations.
+
+You found some links about statistics servers at http://www.statlab.uni-heidelberg.de/WWW/servers.html.
+
+",,http://www.zinnamturm.eu/pac/Onedim.pac
+Oop,Helmut Zinn,OOP Examples for Beginners.,"How to getting started with Object Oriented programming and runtime polymorphism? Here are two examples written in Component Pascal.
+
+OO Shape Example.
+
+Shapes provides an abstract interface for supporting graphical IO methods. You found examples written in other languages at Chris Rathman's website http://www.angelfire.com/tx4/cus/shapes/. Also have a look at Jim Weirich's page http://onestepback.org/articles/poly/ for this topic.
+
+OO Collection Example.
+
+Collections shows how to write data to files and read them back from files. Attila Truszek ported the implementation of Collections from Borland Pascal 7.0 to Oberon/F and I translated them from Oberon/F to Component Pascal (BlackBox 1.5).
+
+",,http://www.zinnamturm.eu/pac/Oop.pac
+Opal,Helmut Zinn and Juan Antonio Ortega,Oberon Portable Applications Library.,"The Opal Library is a part of Pow. Pow is an free Oberon-2 compiler with integrated programming environment. You can download Pow including source code from http://www.fim.uni-linz.ac.at/pow/pow.htm.
+
+I translated the Opal Library to Component Pascal for BlackBox and Juan Antonio Ortega gets the whole subsystem running. The modules String, Float and Utils runs inside the Blackbox environment. All other modules runs as stand alone applications only. We recommend to link the programs into a separate exe file to execute them.
+
+",,http://www.zinnamturm.eu/pac/Opal.pac
+Oss,Koen Desaeger,Oberon-0 Compiler for BlackBox.,"Port to BlackBox of the Oberon-0 compiler from the book 'Compiler Construction' by N. Wirth.
+
+",,http://www.zinnamturm.eu/pac/Oss.pac
+Output,Martin Fisher,A second log window.,"Output is a simple set of commands for controlling a window called Output, along with a few other miscellaneous commands that I find useful for programme output. Output acts like a second log window, and can be written to using the exported variable outputFmtr-, which is of type LibFmtrs.Fmtr from Robert Campbell's Lib Subsystem. The Output window can be set to open automatically when BlackBox starts.
+
+There is a set of exported parameters (variable prms) that can be altered using the dialog box. Some of these parameters alter things that happen in the Output window (e.g. if the BOOLEAN prms.cmntBold is enabled, then text written with OutputCmds.OWrtCmnt will be in bold), others provide useful facilities that may or may not involve the Output windows (e.g. if the BOOLEAN prms.beep is enabled then the line OutputCmds.Beep will cause the system beep to sound, and if prms.beep is disabled then obviously nothing happens), and others provide facilities that involve the Log window (e.g. if prms.timer is enabled then OutputCmds.StartTimer will initialize the timer with LibTimer.Reset and OutputCmds.EndTimer will finish it and write the elapsed time to the log).
+
+I use two types of text when writing to the Output window: 'text' for the majority of the output, and 'comment' text for headings. Use of prms.comment enables one to determine whether headings are used or not (try using OutputDemo.Demo1 with and without prms.comment enabled).
+
+",Ctls Lib,http://www.zinnamturm.eu/pac/Output.pac
+P2o,Chris F. Burrows,Pascal to Oberon Translator (P2o).,"P2o is a program that converts Pascal Source Code into Oberon Source Code. P2o is written in Component Pascal. This version is for use with Oberon Microsystems BlackBox Component Builder v1.5 (BB).
+
+What it does:
+
+
+Translates Jensen & Wirth Pascal or ISO 7185 Standard Pascal syntax to the Oberon equivalent
+Converts keywords to uppercase
+Converts enumerated types to equivalent CONST declarations
+Makes the case of identifiers consistent with their declarations
+Converts subranges to INTEGER
+Expands variant records
+Expands WITH statements which use non-structured record variables. Others are commented.
+
+
+What it does not do:
+
+
+Translate LABELs and GOTO statements
+Convert Array indices. However, the brackets are removed from array declarations
+Translate FORWARD procedures and functions
+Convert Read and Write statements
+
+
+There is also a version for use with Queensland University of Technology's (QUT) Gardens Point Component Pascal v1.3.4 (GPCP). The GPCP version runs as a command-line (console) program on Microsoft Windows with the .NET 2.0 Framework runtime installed. For further details go to http://www.cfbsoftware.com/gpcp
+
+",,http://www.zinnamturm.eu/pac/P2o.pac
+Pac,Gérard Meunier,Data compression utility (Burrows / Wheeler or LZ77 + adaptative Huffman coding).,"This program implements a new algorithm for data compression (Burrows / Wheeler + adaptative Huffman coding). With this new algorithm, and the ability of grouping small files before compressing them, this new release achieves one of the best compression ratio available today. The old algorithm (LZ77 + adaptative Huffman coding) is still provided.
+
+Pac ranks now among the 100 best compressors. You see more about it at http://www.maximumcompression.com/.
+
+",,http://www.zinnamturm.eu/pac/Pac.pac
+Pbox,Stan Warford,Introduction into Computer Science.,"These files are the source code for the programs of the chapters of the book ""Computing Fundamentals: The Theory and Practice of Software Design with BlackBox Component Builder"", published by Vieweg Verlag, 2002. They can be decoded and used with the Oberon microsystems BlackBox Component Builder.
+
+The software is encoded in standard BlackBox ascii format. You will need to install BlackBox on your system to decode the software. See the first few chapters of ""Computing Fundamentals"" for a guide to using the source code.
+
+Addendum 2014: The book Computing Fundamentals has been out of print for some time. As the rights have reverted to me, I decided to place the complete text in the public domain with the hope that the BlackBox community will find it of some value. I welcome you comments.
+
+",,http://www.zinnamturm.eu/pac/Pbox.pac
+Pep6,Stan Warford,Pep/6 simulator.,"An educational project for teaching principles of computer organization to university students. It has an assembler and a machine simulator with trace facilities.
+
+This release of the Pep/6 system is intended to be used in conjunction with the textbook Computer Systems, J.Stanley Warford, Jones & Bartlett Publishers, 2nd edition.
+
+The book describes the Pep/6 computer, which was designed to teach principles of computer organization. This program simulates the execution of Pep/6 by allowing the user to write assembly language programs, translate them to machine language, and execute them. It includes a trace mode for visualizing the registers in the CPU and user selected locations in main memory.
+
+",,http://www.zinnamturm.eu/pac/Pep6.pac
+Pic,Helmut Zinn,A small extensible Vector Graphic Editor.,"The starting point was a BlackBox Workshop by Oberon Microsystems. I extend the result. Now I can create, load and save the graphic view. There I can insert points, lines, squares, rectangles, circles, ellipses and strings. Selected figures can be moved, copied and set their properties. Cut, Paste and Delete are not implemented yet. All operations are undoable.
+
+",,http://www.zinnamturm.eu/pac/Pic.pac
+Plot,Gérard Meunier,Curve plotter.,"This program is a starting point for a collection of 2D plotting tools. By now, it implements plotting of individual points (e.g. experimental results) and of functions of one variable in Cartesian coordinates, but the aim is to develop this collection.
+
+",Ctls Babel,http://www.zinnamturm.eu/pac/Plot.pac
+Pom,Wojtek Skulski,Persistent Object Manager.,"A tool to organize several objects such as histograms into a tree structure similar to the Windows Explorer. The user can open graphical views of collected data by double-clicking on the object icons. The entire tree can be saved to disk as a binary file with an extension "".pom"". The data file can be read back into the Pom at a later time. Pom has been used to manage tens of thousands histograms acquired in an experiment. I use Pom in my laboratory practice. You find slides and further information at http://www.pas.rochester.edu/~skulski/.
+
+",,http://www.zinnamturm.eu/pac/Pom.pac
+Pow,Dan Popa,Pascal of the 3d milenium (Computer programming with Oberon-2).,"The course was used during the previous 4 years in Bacau University by Lect. drd. Dan Popa. The software support was provided by University of Linz. It consists of POW-IDE and the Oberon Compiler.
+
+Despite the existence of best programming environments used by engineers all over the world like BlackBox - which is also based on Oberon, this course was replaced by a Visual C course. That is why this e-book becomes available as Open Doc.
+
+If you want to use Pow! for programming you can download it from: http://www.fim.uni-linz.ac.at/pow/Download.htm. Pow may also be used with C++ and Java.
+
+",,http://www.zinnamturm.eu/
+Prettify,Carl Glassberg,Coco pretty-printer grammars for Component Pascal.,"Prettify provides 3 pretty printer (PP) tools for formatting correct Component Pascal programs:
+
+
+Formatting with comment output (ComponentPascalC.atg)
+Remove End Comments (RemoveEndComments.atg)
+Remove All Comments (ComponentPascalNC.atg).
+
+
+The Prettify commands accept a pre-comment, which precedes the start of a module. Post text, which follows a Component Pascal module, is also accepted. Post text is converted into a comment by enclosing it with open and close comment delimiters.
+
+When formatting, Prettify commands unfortunately remove hyperlinks, commander tool buttons, etc. present in the input.
+
+Colorization is deliberately exaggerated to show program structure: reserved words and punctuation, etc. The main function of the pretty-printers are to insert line breaks and perform indentation of program structures. It is recommended, as a final step, to run Cpc -> ""Beautify"" on the output of Prettify commands.
+
+The tools use modified Coco scanners. Extended Latin-1 characters are allowed in identifiers. Additionally, Unicode is allowed in strings and comments. Comments can contain horizontal tab (9X), cr (0DX) and para (0EX) characters. Strings can contain horizontal tab characters.
+
+The behavior of the pretty-printers are controlled by the embedded semantic actions in the respective Coco (ATG) grammars. If changes to formatting are desired, this is the only portion of a grammar that should be modified.
+
+",,http://www.zinnamturm.eu/pac/Prettify.pac
+Probability,Mary Kynn,Visualising probability.,"Tools for visualizing probabilities are based on a betting scenario where the assessor should determine whether they would prefer to bet on the event in question or on the shaded section of the wheel, bar or sample. The shaded section should be adjusted until the assessor is indifferent to the two bets (that is, the event has the same probability of occuring as the shaded section).
+
+The wheel, bar and sample can be manipulated via the mouse and the keyboard. Clicking and dragging the mouse across the tools will increase or decrease the shaded section, as will the arrows on the keyboard. To display the probabilities double click the tool.
+
+",Elicitor,http://www.zinnamturm.eu/pac//Probability.pac
+Prolog,Gérard Meunier,Prolog Interpreter.,"This program provides a Prolog machine, able to run Prolog programs. It's a simplification of Prolog II, one of the first Prolog interpreter available with a slightly different syntax.
+
+",,http://www.zinnamturm.eu/pac/Prolog.pac
+Race,Gérard Meunier,Race.,"Race is a game of race on circuit by turns, which can be played alone or not. You found an exe file ready for running at http://gemeu.free.fr/Race.exe for the French version, and http://gemeu.free.fr/en/Race.exe for the English one.
+
+",,http://www.zinnamturm.eu/pac/Race.pac
+Reg,Werner Bossert,Reading windows registry with BlackBox.,"This program reads and edits registry entries. It uses new BlackBox 1.4 facilities TreeControls and StdTables.
+
+",,http://www.zinnamturm.eu/pac/Reg.pac
+Rng,Helmut Zinn,Random Number Generator.,"The subsystem Rng provides 28 different random number generators and some programs for analysing them.
+
+
+Linear Congruential Generator (Cray, Excel, Minstd, Pbox, Randu, Slatec, Vax)
+Lagged Fibonacci Generator (Ran3, Ranlux, Uni, Zufall)
+Shift Register Generator (Aos, Gfsr4, Issac, R250)
+Combination Generator (Ecuyer, Fib, Kiss123, Ranmar, Shuffle)
+Multiply Recursive Generator (Knuth, Mrg)
+Multiply with carry Generator (Mwc)
+Xor Shift Generator (Xor4096)
+Mersenne Twister Generator (MT19937)
+Twisted GFSR Generator (TT800)
+Tausworthe Generator (Taus113, Taus88)
+
+
+Further this subsystem contains some tests for analysing this random number generators:
+
+
+Summary Statistics
+Speedtest
+Run Sequence Plot
+The Lag Plot
+The Bitmap Plot
+Plane Plot
+
+
+You can proof all random number generators with this tests and find the two really bad ones.
+
+",Ctls Util,http://www.zinnamturm.eu/pac/Rng.pac
+Scl,Dmitry V. Dagaev,Standard Container Library.,"Standard Container Library package implements vectors, lists, queues, stacks, maps without any generics. It uses BlackBox Kernel metadata structs to safely resize dynamically allocated contents. The main principle is that the same tasks use the same software. For example, the Scl lists work with list of records, no matter whether those records contain strings or integers.
+
+",,http://www.zinnamturm.eu/pac/Scl.pac
+Sdl,Oleg N. Cher,Simple DirectMedia Layer bindings for Oberon.,"Simple DirectMedia Layer (www.libsdl.org) bindings for Oberon family languages: Modula-2 and Oberon-2 (XDS), Active Oberon (OPCL, ETH Oberon) and Component Pascal (BlackBox Component Builder). Supported SDL version 1.2.15 (stable).
+
+This project is similar to the subsystem Free. You find the bindings for Component Pascal at the official web-site: http://sourceforge.net/projects/sdl-for-oberon/
+
+",,http://www.zinnamturm.eu/
+Shapes,Stan Warford,Renders primitive shapes.,"I have always wanted a graphics editor with BlackBox and never had the time to work on one. I developed a module named ShapesDraw, however, that could serve to render primitive shapes for the editor.
+
+It exports the following procedures:
+
+
+Arc, a 90 degree arc
+RoundedRect, a rectangle with rounded corners
+Arrow, an arrow with a solid shaft
+PathArrow, an arrow with a hollow interior
+Pie, a segment of a pie chart
+Sin, an efficient computation of sine
+Cos, an efficient computation of cosine
+
+
+I think the arrow routines are particularly nice, as you can specify the exact shape of the arrowheads. You can even put them on either or both ends of a Bezier curve. Integer arithmetic is used for efficiency, and angles are specified to a precision of 1/64 of one degree. The module is well-documented. It has a suite of test programs including some with animation. The BlackBox system is particularly nice, as you get resolution-independent rendering for hardcopy output. Anyone is welcome to use the module as one of the building blocks of a BlackBox editor.
+
+",,http://www.zinnamturm.eu/pac/Shapes.pac
+Sphere,Gérard Meunier,Positions of charged particles on a sphere.,"This program computes and displays graphically the positions of identical electrically charged particles able to slide on a sphere and at rest.
+
+",,http://www.zinnamturm.eu/pac/Sphere.pac
+SQLite,"Peter Cushnir, Ivan A. Kuzmitskiy, Manuel Martín Sánchez and Josef Templ",Using SQLite with BlackBox.,"SQLite is a software library that implements a self-contained, serverless, transactional SQL database engine. Unlike most other databases, SQLite does not have a separate server process. SQLite reads and writes directly to ordinary disk files.
+
+SQLite is an embedded relational database engine. SQLite understands most of the standard SQL-92 language. But it does omit some features while at the same time adding a few features of its own.
+
+This SQLite driver based on example by PGR: http://forum.oberoncore.ru/viewtopic.php?f=5&t=497&p=16450&hilit=sqlite#p16450
+
+",,http://www.zinnamturm.eu/pac/SQLite.pac
+SQLiteBrowser,Gerhard Marent,Browser for SQLite.,"SQLiteBrowser adds a browser tool with inbuild query archive to the SQLite system.
+
+",SQLite,http://www.zinnamturm.eu/pac/SQLiteBrowser.pac
+Srcnav,Guy Laden and Josef Templ,Component Pascal Source Code Navigator.,"This Navigator tool was conceived as a simple tool for easing the editing of large module texts by providing a fast way to locate procedure definitions. On activation of the Navigator from the BlackBox text editor, a dialog box appears listing the procedures defined in the module. Once a procedure is selected from the list, the text scrolls to the selected procedure and the signature is selected. For large modules this process is usually significantly faster than using the usual caret movement or search facilities provided by the editor.
+
+Even though the list of procedures presented by the Navigator is much shorter than the module text, it can be quite long too. It is useful to be able to shorten the list by filtering from it procedures that aren't of interest. The Navigator supports several predefined types of filters and a search box that supports * as a wild-card.
+
+",,http://www.zinnamturm.eu/pac/Srcnav.pac
+State,René A. Krywult,3D Programming for Windows.,"Welcome to 3D Programming using the 3DSTATE Engine in Component Pascal. Whether you are an experienced game designer or looking to produce your first 3D game, this subsystem is for you. In a very short time, you will be using the 3DSTATE Engine to create rich and exciting 3D games with beautiful graphics and state-of-the-art performance. While mastering a 3D graphics API can take years, the 3DSTATE Engine will have you writing games within weeks. Combined with the power of Component Pascal and the Blackbox, programming high-end 3D applications and games becomes easy.
+
+Please note also, that the subsystem State is a substitute for the Morfit subsystem, which gives access to the Morfit engine version 3.0. The Morfit engine was renamed in Version 4 to 3DState, and the current State subsystem gives access to the 3DState engine version 6.0.
+
+Since these are only the interface modules, nothing will work without first downloading and installing the 3DState engine. For further information see Quick-Start of State and look at http://www.3dstate.com/'.
+
+
+StateD is the primary interface
+StateCameras imbeds the StateD engine in the BB framework
+State/Templates/Template is a template for using StateCameras
+
+
+",,http://www.zinnamturm.eu/pac/State.pac
+StdBackgrounder,Robert D. Campbell,Set Background Colour in Views.,"StdBackgrounder is a simple example of implementing a 'Wrapper'. It is used to add a background colour to arbitrary Views embedded into a Text Document.
+
+",,http://www.zinnamturm.eu/pac/StdBackgrounder.pac
+Sudoku,Gérard Meunier,Sudoku Builder & Solver.,"Sudoku can build easy and hard Sudoku puzzles. It can also solve any Sudoku puzzle at once or step by step. The engine of Sudoku is a Knuth's algorithm, Dancing Links, that may be used to solve many problems besides Sudoku. So, I've inserted it in the Util subsystem. You found an exe file ready for running at http://gemeu.free.fr/Sudoku.exe for the French version, and http://gemeu.free.fr/en/Sudoku.exe for the English one.
+
+",,http://www.zinnamturm.eu/pac/Sudoku.pac
+Ta_,Dmitry V. Dagaev,Transparent Architecture - communication SW for distributed systems.,"This software is purposed for communication between different programs, written in Oberon and C. It uses SRPS protocol type for LANs via UDP multicast, UDP, TCP, Shared Memory, PING for ICMP and SOAP/HTTP for WANs.
+
+TA is distributed in BlackBox, XDS and C versions both for Windows and Linux compatible with each other at http://sourceforge.net/projects/ta1/.
+
+",,http://www.zinnamturm.eu/pac/Ta_.pac
+Tabmult,Gérard Meunier,Multiplication tables training.,"Have you forgotten your multiplication tables? Or, maybe, have you children? Try this program and adopt it! The program remembers your good and bad answers. It will ask you more often the questions you don't know. There exists a French version, an English and a German one in the same package. There is also a Make.odc file, which uses the new packing feature of the BlackBox 1.4 version, and generates a stand-alone exe file.
+
+",,http://www.zinnamturm.eu/pac/Tabmult.pac
+TboxAnmeldebilder,Helmut Zinn,Saving the Spotlight Images from Windows 10 Lock Screen.,"On the Windows lock screen the pictures are automatically changing. It's called Windows Spotlight. This module saves the lock screen images in your own directory. You can use the result as desktop wallpaper and for slideshow.
+
+",,http://www.zinnamturm.eu/pac/TboxAnmeldebilder.pac
+TboxBirthday,Helmut Zinn,Birthday reminder.,"Did you ever forget the birthday of your friend? Then you need this little program. When some friends have birthday today then it pops up during the start of Blackbox. Further you can generate a 30 days look ahead list.
+
+",,http://www.zinnamturm.eu/pac/TboxBirthday.pac
+TboxBook,Helmut Zinn,Writing books with BlackBox.,"The module TboxBook expands the BlackBox text editor with some useful commands:
+
+
+Create title line
+Collect all title lines and write the table of contents
+Insert a ruler with n tab stops
+Change word to lowercase, uppercase or capital letter
+Create internet or document links
+Insert special characters and symbols
+
+
+That's all you need for writing documents with table of contents and hyperlinks. It makes the life much easier.
+
+",,http://www.zinnamturm.eu/pac/TboxBook.pac
+TboxCoderList,Helmut Zinn,Generate a package list for StdCoded and PacCoded files.,"This module generate the list of all source files of one subsystem automatically. You can select all items of this list and use the menu [Tools][Encode File List] to create a StdCoded file of your subsystem.
+
+",Ctls CpcMenus,http://www.zinnamturm.eu/pac/TboxCoderList.pac
+TboxCompFile,Gérard Meunier,Binary compare file.,"Are you interested by this little module? It asks for two files and tests their equality at a binary level. I use it to test whether Pac works well or not. As it is interesting in a general way, perhaps you'd like to use it.
+
+",,http://www.zinnamturm.eu/pac/TboxCompFile.pac
+TboxCountDown,Helmut Zinn,How many days are left until...?,"This module will answer that questions into the Log window.
+
+",,http://www.zinnamturm.eu/pac/TboxCountDown.pac
+TboxHexConv,Helmut Zinn,Read and write hex dump.,"This is an extension of Oberon Microsystems hex file importer. It optionally outputs the printable representation in columns or lines in addition to the hex codes. In its default configuration it behaves exactly like the original. The original importer is from the Bernhard Treutwein's More utilities for BlackBox. I add an hex file exporter too. You can save the modified hex-code.
+
+",,http://www.zinnamturm.eu/pac/TboxHexConv.pac
+TboxPhoto,Helmut Zinn,All picture files rename to increasing sequential numbers.,"I organize my photo archive in the following way: I create one folder for every year. This folder containing a folder for each month. After downloading the picture (*.jpg) from the camera into one folder, I delete all bad ones and then I rename the other ones with this procedure. It is still possible to download new picture into the same folder and rename them with this procedure again.
+
+",Ctls TboxTimer Dos Pac,http://www.zinnamturm.eu/pac/TboxPhoto.pac
+TboxTeaTime,Helmut Zinn,Tea Time Alarm Clock.,"Do you have a bug in your program? Let's have a break. It's tea time now. Is there any tea left? Do you need another cup of tea? Certainly you need the tea time alarm clock. We say in Germany: to wait and see (abwarten und Tee trinken). I'm sure after that break you find your bug immediately.
+
+",Babel Util Ctls Dos Pac,http://www.zinnamturm.eu/pac/TboxTeaTime.pac
+TboxText,Helmut Zinn,Some Text Editing Commands.,"This module extend BlackBox with some basic text editing facilities. What it does:
+
+
+Change Word to Capital Letter.
+Change Word to Lower Case.
+Change Word to Upper Case.
+Character Conversion from IBM-PC Character Set to Unicode.
+Character Conversion from ASCII Code Page Cyrillic to Unicode.
+Turn RGB Color Defintion (exchange red with blue).
+Create String List.
+Sorting Text Lines.
+
+
+I wrote this commands during my work on CpcLanguage. I used them with subsystem Omi together for creating and sorting Rsrc/Strings documents.
+
+",,http://www.zinnamturm.eu/pac/TboxText.pac
+TboxTimer,Helmut Zinn,Measure the runtime of one procedure/module.,"You can measure the run time of any module and procedure:
+e.g. (!) ""TboxTimerStart; MySubsystem.MyCommand; TboxTimer.Stop""
+The result is in the Log window.
+
+",,http://www.zinnamturm.eu/pac/TboxTimer.pac
+TboxTranslate,Helmut Zinn,Text Translation by Words.,"This module expand the Find and Replace command with a translation table. You can
+
+
+Creating your own table.
+Change between different table.
+Adding a missing word to the table.
+Using the translation table with Text -> Find / Replace... commands.
+
+
+A existing translation table can also used in the reverse direction.
+
+",Ctls Pac,http://www.zinnamturm.eu/pac/TboxTranslate.pac
+Toolbar,Juan Antonio Ortega,Add a toolbar to the BlackBox window.,"Do you like toolbars? Do you miss toolbars inside BlackBox? Don't wait any longer. Download this subsystem. With this subsystem you can add a toolbar to the BlackBox Component Builder.
+
+",,http://www.zinnamturm.eu/pac/Toolbar.pac
+Tp2cp,Gérard Meunier and Helmut Zinn,Turbo Pascal to Component Pascal Translator.,"This software converts Turbo Pascal source program to Component Pascal (Oberon-2). All exported identifier collected into one symbol table. The symbol table is used for name translation.
+
+It features:
+
+
+Translate Turbo Pascal source to Component Pascal
+Automatically adds subsystem names
+Change exported names accordantly the symbol table
+Optional translations of ReadLn and WriteLn
+
+
+We recommend to format the result with the CpcBeautifier.
+
+",UnicodeMappings Babel Util Ctls Pac,http://www.zinnamturm.eu/pac/Tp2cp.pac
+Tpc,Rainer Neubauer,Support for Technical Process Control.,"Simple finite state machines (FSMs) are applied to implement complex process control algorithms, i.e. long running commands. Additional support is offered for handling of large configuration files, for saving of current process state and for serial communication (RS232 or TCP) to hardware devices (power supplies, measuring instruments, etc.) as well.
+
+The overall concept is explained in an introductory text containing small worked examples. Additional examples have been implemented to play with and try out the supporting modules mentioned above.
+
+TpcGenericFsms offers simple finite state machines for implementing process control algorithms, i.e. ""long running commands"". Support for debugging includes logging of state switching to StdLog, setting of break points at arbitrary states, single stepping from state to state and logging of state history. 
+
+TpcConfigDataControl offers a means for maintaining configuration files by technical stuff without having knowledge to the develop environment of BlackBox (e.g. ""when and how to call the compiler""). The configuration data serve for parameterizing the technical process (e.g. hardware configuration).
+
+TpcGenericStatusFiles supports in saving process status data to hard disk. In case of a computer crash followed by a reboot the technical process may be continued in the state like just before the interrupt.
+
+TpcSerialDevices implements serial connections to hardware devices via RS232 or TCP. Commands to devices and answers from devices may be of fixed length or variable length with terminator characters. Master devices for control of hardware devices are available as are slave devices for simulation of hardware devices at an early phase of a project when hardware devices may not yet be available. Outgoing and incoming serial data may be logged to StdLog for debugging.
+
+",,http://www.zinnamturm.eu/pac/Tpc.pac
+Trf,Carl Glassberg,Text reader & formatter filter.,"Trf is the abbreviation for Text reader / formatter. The subsystem Trf contains the following modules:
+
+TrfFilter copies from an open text view the printable (ASCII and Latin-1) characters + cr + ht + para to a new text view. Other control code characters and Unicode are converted to a string representation of the equivalent hexadecimal character constant.
+
+TrfUnbeautify converts control characters (except for cr and para) and Unicode characters to space (20X). It deletes leading and trailing space, and squeezes adjacent space within a line to 1 space character (20X). It removes colorization and makes everything a monochrome color (blue). Horizontal formatting is squeezed but vertical formatting is preserved.
+
+TrfCrush is similar to Unbeautify but additionally converts multiple adjacent end-of-line to 1 end-of-line. Vertical formatting is crunched and horizontal formatting is squeezed.
+
+TrfText unfold input paragraphs of multiple lines of text into single-line paragraphs. Repeatedly running this command will turn all input text into a single line.
+
+TrfNrLines number lines in a text file. The first line is numbered 0.
+
+",,http://www.zinnamturm.eu/pac/Trf.pac
+Ttf,Werner Bossert,"Ttf Covering (TrueType Fonts, OpenType File Format).","TtfCovering scans TrueType Fonts and OpenType Font respectively, of the file type TTF and TTC. TrueType Collections TTC contain several fonts. The table BlocksAndFontsTab displays Range, Block, number of characters covering a font and the name of the font. The module UnicodeFontsGen can be generated.
+
+Covering fonts are in alphabetical order and ascending order of the number of covering characters unless other priorities are prefered. The table Covering BlocksTab shows all ranges, blocks and number of characters covering a selected font.
+
+Blocks.txt of the Unicode Standard Version 15.0.0 is used for Ranges and Block names.
+
+",Ctls UnicodeMappings Dos Pac,http://www.zinnamturm.eu/pac/Ttf.pac
+UnicodeGenerators,Werner Bossert,Unicode Generators with Unicode Character Database.,"To extend mappings and requests of letters, numbers and symbols to the full Unicode range or to the Basic Multilingual Plane (BMP) or to a part of the Unicode range to handle languages, module generators use information of the UnicodeData.txt.
+
+The Unicode Consortium publishes in the Unicode Character Database (UCD) the text file UnicodeData.txt.
+
+UCD (Unicode Standard Version 15.0.0 released 13-September-2022): https://unicode.org/Public/UNIDATA/UnicodeData.txt
+or look for the latest version of the UCD at https://www.unicode.org/Public/
+
+UnicodeData.txt is the database for the module generators Unicode­XXXGenerator (Unicode­Case­Generator, Unicode­Case­GeneratorExt, Unicode­IsCase­Generator, Unicode­Letter­Generator, Unicode­Number­Generator, Unicode­Specials­Generator, Unicode­Arabic­Generator, Unicode­Decomposition­Generator, Unicode­Characters­Generator and Unicode­Bidirectional­Generator, Unicode­East­Asian­Width­Generator, Unicode­Math­Class­Generator, Unicode­Emojis­Generator). The generated auxiliary files are simplified by Unicode­NormXXX (Unicode­Norm­Case, Unicode­Norm­IsCase, Unicode­Norm­Letter, Unicode­Norm­Number, Unicode­Norm­Specials, Unicode­Norm­Arabic, Unicode­Norm­Decomposition100H, Unicode­Norm­Decomposition, Unicode­Norm­Decomposition­Iter, Unicode­Norm­Characters and Unicode­Norm­Bidirectional, Unicode­Norm­East­Asian­Width, Unicode­Norm­Math­Class, Unicode­Norm­Emojis.
+
+The result are the modules Unicode­XXX_Mapping (Unicode­Case_MappingGen, Unicode­IsCase_Mapping, Unicode­Letter_Mapping, Unicode­Number_Mapping, Unicode­Specials_Mapping, Unicode­Arabic_Mapping, Unicode­Decomposition100H_Mapping, Unicode­Decomposition_Mapping, Unicode­Decomposition­Iter_Mapping, Unicode­Unassigned_Mapping, Unicode­Characters, Unicode­Bidirectional_Mapping, Unicode­East­Asian­With, Unicode­Math­Class_Mapping, Unicode­Emojis_Mapping). The procedures in the generated modules consist of a CASE statement. The case expression can be of type character or integer.
+
+",,http://www.zinnamturm.eu/pac/UnicodeGenerators.pac
+UnicodeMappings,Werner Bossert,Unicode Mappings with the generated Modules.,"UnicodeMappings provide mappers for upper, lower or title case mapping, and also provide converters from Unicode (UTF-8, UTF-16, UTF-32; little or big endian) to other encodings or vice versa. Further examples for mapping and decomposiion of Unicode are shown.
+
+The base for the Unicode Mappings are the published Unicode Character Database (UCD) by the Unicode Consortium in
+
+UCD (Unicode Standard Version 15.0.0 released 13-September-2022): https://unicode.org/Public/UNIDATA/UnicodeData.txt
+or look for the latest version of the UCD at https://www.unicode.org/Public/
+
+UnicodeMappings contains all modules generated in UnicodeGenerators. Some of the generated mapping modules have been further simplified by hand. The encoding converter UnicodeConverterDlg includes XML-Conversion. To recognize the encoding and the endianness (little-endian order or big-endian order) byte order mark (BOM) is used. For XML files existing encoding-declaration is used. Changing the encoding: The encoding declaration can be optionally adapted or inserted. UnicodeConv provides UTF-8 import and export by file with the uni and XML extension.
+
+In UnicodeConverterTests a few examples for the encoding conversions are shown.
+
+",Ctls Pac,http://www.zinnamturm.eu/pac/UnicodeMappings.pac
+Util,Gérard Meunier,Utility tools.,"Util is a set of utility tools.
+
+
+
+UtilAlea is a random number generator.
+
+
+UtilAvlTree implements balanced and threaded trees.
+
+
+UtilBTree & UtilBBTree let manage a disk file like a heap, allocating and freeing it easily, with the possibility of indexing by BTrees.
+
+
+UtilBTree3 & UtilBBTree3 is an enhanced version of UtilBTree, with 64 bits addressing.
+
+
+UtilControlTypes lists, from the focus container, all control types, links, guards and notifiers.
+
+
+UtilControlViews makes controls linked to the same interactor and included in different documents behave as if they were linked to different interactors. With this feature, it becomes possible to use controls in document windows. Works with all current controls, but Dialog.Trees. For Dialog.Trees, use UtilTreeModels & UtilTreeViews instead.
+
+
+UtilDancingLinks uses D.E. Knuth's DLX (Dancing Links) algorithm to solve cover problems, such as Sudoku (see Sudoku and https://www-cs-faculty.stanford.edu/~knuth/papers/dancing-color.ps.gz).
+
+
+UtilDiffEq is an numerical integrator of sets of differential equations which provides the requested precision.
+
+
+UtilDirChoose let you choose a directory.
+
+
+UtilExtFiles provides procedures to manage record times of files.
+
+
+UtilExtFonts gives more information on font metrics.
+
+
+UtilExtStrings defines an abstract type of extensible strings and implements it.
+
+
+UtilFunc provides inline functions.
+
+
+UtilInvisible provides invisible views that carry data.
+
+
+UtilJson encodes CP structures into JSON format and vice versa.
+
+
+UtilLedControls implements a control that looks like a LED.
+
+
+UtilLeftist implements leftist trees, which may be used for priority queues.
+
+
+UtilMaths is a tool for writing mathematics, loosely inspired by TeX, D.E. Knuth's famous system.
+
+
+UtilPrimes & UtilPrimesDisp scan quickly prime numbers forward and backward.
+
+
+UtilSets & UtilSets4 are implementations of sets of integers.
+
+
+UtilSort provides an abstraction for quickly sorting and searching integer indexed structures, like arrays.
+
+
+   UtilStorage & UtilStorage2 permit to allocate and deallocate memory manually; they are error prone but sometimes useful.
+
+
+UtilTime provides different time counters, with different precisions.
+
+
+UtilTreeModels & UtilTreeViews encapsulate a tree Control and provides a standard Model/View component.
+
+
+UtilWordCount counts words in a text or a selection of it.
+
+
+UtilWrappers permits to wrap views with additional data.
+
+
+
+",Babel UnicodeMappings Ctls Pac,http://www.zinnamturm.eu/pac/Util.pac
+W3c,Josef Templ,"XML, HTML, CSS, and JSON.","The W3c subsystem provides parsers for XML (eXtensible Markaup Language), HTML (HyperText Markup Languge), CSS (Cascading Style Sheets), and JSON (JavaScript Object Notation) that follow the respective W3C standard. The input is an arbitray character stream, the output is an abstract syntax tree following the W3C Document Object Model (DOM) or a CSS or JSON syntax tree. In addition, an error handler can be provided. Each parser resides in a separate module and uses a related scanner (module) for tokenizing the input stream.
+   In order to avoid excessive string object creation, all parsers optionally support string pooling. String pooling means that string objects use a single shared instance if they occur multiple times. If string pooling is used (default off), string objects should be treated as immutable.
+
+The subsystem W3c also provides an importer for HTML documents and clipboard data (HtmlImporter) based on UTF-8 encoding. Note that it is not possible to import all HTML/CSS constructs exactly as they appear in a modern browser. However, the importer tries its best to handle at least those properties that have a correspondence in BlackBox. The importer does not handle imported or embedded style sheets but it does handle inline style attributes because clipboard HTML data is based excusively on inline styles.
+
+",,http://www.zinnamturm.eu/pac/W3c.pac
+Wands,Robert D. Campbell,A collection of general purpose and eclectic tools (Wand: tool used by a magician).,"Wands provides a large number of Tools of general use for programming, and for manually accessing some of the facilities provided in subroutine form in Lib. A few examples are:
+
+
+AsciiPlot - Tool for graphing numeric data stored in an Ascii file
+Browser - Browses Docu & Mod files from methods & fields within variables
+CheckSum - Multiple file List/Copy/Compare tool with 32-bit checksum or fingerprint
+Fragments - Inserts fragments of source code into the Focus Text
+Diary - Multiple format diary with alarms
+Ieee754 - Analyses IEEE 754 64-bit REAL floating point binary format
+Parse - Parses arithmetic expressions; a Calculator that uses Parse - highly recommended
+RelinkForm - Renames (all) Links, Guards, & Notifiers in a form
++ over twenty other similar tools.
+
+
+",CpcChill Multi Casket Ctls Algebra Lib Frame Filter,http://www.zinnamturm.eu/pac/Wands.pac
+Water,Gérard Meunier,Simulation of waves (Example of bitmap manipulation by WinApi calls).,"It's just a little pool. And it may rain upon it.
+
+",Babel,http://www.zinnamturm.eu/pac/Water.pac
+Web,Marc Frei,Publishing BlackBox documents on Internet or Intranets.,"Some time ago we have actually put together a very rough prototype of a BlackBox subsystem Web. The subsystem ""Web"" allows you to publish simple BlackBox documents and forms as web pages.
+
+The documentation that is included assumes that the Web subsystem is used together with a CGI-capable web server (e.g. Apache or Microsoft IIS). In order to facilitate experimentation with our subsystem web, you need additionally Stewart Greenhill's lightweight web server ""Dbu"" which runs directly from within BlackBox.
+
+",CommTCPAsync,http://www.zinnamturm.eu/pac/Web.pac
+Webstat,"Carl Glassberg, Gérard Meunier and Helmut Zinn",Analysing Web Log Files.,"Would you like to know how many users visit your website? How many downloads they have done? Which downloads belong to the top 10? Here you are.
+
+Webstat analyse the web server's log file. It produces usage statistic reports about hits, files, pages, visits, sites and bytes transfered. The result is separated in users, robots and total access. It also reports a top ten list of downloads and countries. Further it is possible to select more than one log file to create one report over a long piriod of time (e.g. one year).
+
+This subsystem contains a nice tool which determine the country by IP address. You enter the IP address and get the country as result. The ip address to country database has about 500,000 records and 240 countries.
+
+",Ctls Coco Pac,http://www.zinnamturm.eu/pac/Webstat.pac
+WorkWindows,Eugene Temirgaleev,List of open windows.,"When you are opening more the 9 windows during your work then switching windows via the menu Window becomes inconvenient. I wrote a small program, which will list all open windows inside a dialog box and allows to switch them there. Here is that program. It may be also useful for you.
+
+",,http://www.zinnamturm.eu/pac/WorkWindows.pac
+Xmlcore,Peter Cushnir,Using Document Object Model and Extensible Markup Language.,"The subsystem Xmlcore is an implementation of the DOM Level 2 and a XML-parser, based on DOM.
+
+DOM (Document Object Model) is a W3C definition of generic platform-independent API for presenting hierarchical document structures in computer's memory. You can read more abotut that topic at http://www.w3.org/DOM/DOMTR.
+
+XML (Extensible Markup Language) is a general-purpose specification for creating user defined markup languages. It makes it possible to define the content of a document separately from its formatting, making it easy to reuse that content in other applications or for other presentation environments.
+
+Xmlcore purposed to parse, change and generate XML files into DOM stuctures as described in W3C (World Wide Web Consortium) recomendations http://www.w3.org/XML/.
+
+",,http://www.zinnamturm.eu/pac/Xmlcore.pac
+Xy,Koen Desaeger and Helmut Zinn,Xy Games.,"Subsystem Xy contains games based on XyColorPlane grafik. We offer something unique: a compromise between the mono-tasking of the original XYplane and the perfect cooperative multitasking of Blackbox. The following games are included: ""IFS (Fractale)"", ""Life"", ""Lights on"", ""Minesweeper"", ""Reversi (Othello)"", ""Tic Tac Toe"", ""Vier Gewinnt (Connect Four)"", ""Pac Man"", ""Snake"", ""Tetris"" and ""Tron"".
+
+",,http://www.zinnamturm.eu/pac/Xy.pac
